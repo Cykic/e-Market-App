@@ -1,3 +1,156 @@
-h1{
-    color: green;
+* {
+  box-sizing: border-box;
+  margin: 5px 2px;
+  padding: 0;
+  
 }
+
+/* color scheme */
+:root {
+  --primary-color: rgb(4, 30, 66);
+  --secondary-color: rgb(255, 194, 32);
+  --button-color: rgb(0, 101, 255);
+  --blue-opa: rgb(230, 241, 252);
+  --subText: rgb(150, 137, 179);
+  --newtag: rgb(71, 129, 224);
+}
+
+
+.prd{
+  border: 1px solid rgba(0, 0, 0, 0.146);
+  padding: 25px 20px;
+  position: relative;
+  /* border-radius: 5px; */
+  background-color: rgba(15, 15, 15, 0.02);
+  margin: 10px;
+}
+.prd-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.new-tag {
+  position: absolute;
+  top: 1px;
+  color: var(--newtag);
+  background-color: var(--blue-opa);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+.prd-container img{
+    width: 80px;
+    height: 80px;
+    
+}
+.row1{
+    flex-grow: 1;
+}
+
+.prd-title{
+    text-decoration: underline;
+}
+.prd-subtitle{
+    color: var(--subText);
+    font-size: 12px;
+}
+.prd-price{
+  font-weight: bold;
+}
+.prd-discount{
+    color: var(--subText);
+    text-decoration: line-through ;
+    font-size: 14px;
+}
+
+.prd-footer{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.prd-remove{
+  color: red;
+}
+.prd-remove, .prd-save{
+  font-size: 14px;
+  text-decoration: underline;
+}
+.prd-save,.prd-remove:hover{
+  cursor: pointer;
+}
+
+.checkout-container{
+  background-color: rgb(250,250,250);
+  border: 1px solid rgba(0, 0, 0, 0.146);
+  padding: 5px 10px;
+  margin: 10px;
+  max-width: 96%;
+  margin: 0 auto;
+}
+
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.checkout-btn{
+  width: 100%;
+  padding:10px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--button-color);
+}
+
+.checkout-btn:hover{
+  cursor: pointer;
+  transform: translate(0,-1px);
+  opacity: 0.7;
+}
+
+.bold{
+  font-weight: bold;
+}
+@media only screen and (min-width: 1000px){
+  .prd{
+    max-width: 73%;
+  }
+
+  .checkout-container{
+    position: absolute;
+    background-color: rgb(250,250,250);
+    border: 1px solid rgba(0, 0, 0, 0.146);
+    right: 10px;
+    width: 25%;
+    top: 38px;
+    height: 600px;
+  }
+
+  .prd-qty-container{
+    position: absolute;
+    top: 25px;
+    left: 50%;
+  }
+
+  .prd-footer{
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    width: 250;
+  }
+  
+  .prd-price,.prd-discount{
+    position: absolute;
+    right: 25%;
+    top: 30;
+  }
+  
+  .prd-discount{
+    top: 60px;
+
+
+  }
+
+}
+
