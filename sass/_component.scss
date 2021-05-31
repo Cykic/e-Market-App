@@ -1,0 +1,104 @@
+.btn-search{
+    width: 20%;
+    background-color: var(--color-tetiary);
+    border-radius: 0 1rem 1rem 0;
+}
+
+.btn{
+    font-size: 1.7rem;
+    height: 4rem;
+    width: 12rem;
+    border-radius: 7rem;
+    font-family: inherit;
+    font-weight: 400;
+    border: 2px solid var(--color-tetiary);
+    color: var(--color-tetiary);
+    background: transparent;
+    cursor: pointer;
+}
+
+
+.see-more{
+    color: red;
+    border: none;
+    font-weight: 600;
+    background: none;
+    font-size: 1.4rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.imgs{
+    height: 100%;
+    width: 100%;
+    transform: scale(1.5);
+}
+
+
+.add-to-cart{
+    font-size: 1.7rem;
+    height: 3rem;
+    width: 12rem;
+    border-radius: 7rem;
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    background-color: var(--color-tetiary);
+    color: var(--color-black);
+    margin-top: 1rem;
+    cursor: pointer;
+
+    &:focus{
+        outline: 1px solid var(--color-tetiary);
+    }
+    
+    
+}
+
+.fa {
+   
+    font-size: 2rem;
+    width: 5rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .fa-facebook {
+    padding: 1rem;
+    background: #3B5998;
+    color: white;
+  }
+  
+ 
+  .fa-twitter {
+    padding: 1rem;
+    background: #55ACEE;
+    color: white;
+  }
+
+  .icon{
+      font-size: 3rem;
+      color: var(--color-tetiary);
+  }
+
+  .cart-number{
+      position: absolute;
+      font-size: 1.8rem;
+      top: -17%;
+      right: -12%;
+      padding: .3rem .7rem;
+      border-radius: 50%;
+      font-weight: 500;
+      background-color: rgb(255, 7, 7);
+      text-align: center;
+      border: 1px var(--color-primary);
+  }
+
+  .fa-star-o{
+      padding: 0 ;
+      background-color: var(--color-tetiary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      display: inline-block;
+      color: transparent;
+  }
