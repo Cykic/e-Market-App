@@ -58,9 +58,22 @@
           
         }
 
+        &__img{
+            width:9rem;
+            height: 9rem;
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+          
+        }
+
         &__search-bar{
             height: 60%;
-            width: 45%;
+            width: 30%;
             display: flex;
             align-items: center;
             position: relative;
@@ -81,7 +94,7 @@
                 width: 80%;
                 font-family: inherit;
                 padding: .7rem;
-                border-radius: 1rem 0 0 1rem;
+                border-radius: 6rem 0 0 6rem;
 
 
                 &:focus{
@@ -111,6 +124,6 @@
    @media screen and (min-width: 43.8em) {
     position: absolute;
     left: 5%;
-    top: 35%;
+    top: 0%;
    }
 }
