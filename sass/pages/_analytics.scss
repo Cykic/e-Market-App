@@ -1,0 +1,110 @@
+.sidebar {
+  background-color: var(--sidebar-color);
+  grid-column: sidebar-start/sidebar-end;
+  grid-row: 1/-1;
+}
+
+.analysis {
+  display: grid;
+  grid-template-rows: repeat(5, min-content);
+  grid-template-columns:
+    [sidebar-start] 12rem [sidebar-end full-start] minmax(1.5rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end])
+    [center-end] minmax(1.5rem, 1fr) [full-end];
+  //   grid-gap: 20px;
+
+  &__heading {
+    background-color: #fff;
+    grid-column: full-start/full-end;
+  }
+
+  &__box {
+    background-color: green;
+    grid-column: center-start/center-end;
+
+    margin: 20px 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    &-visits {
+      background: red;
+    }
+
+    &-sales {
+      background: rgb(119, 59, 59);
+    }
+
+    &-deliveries {
+      background: rgb(75, 58, 58);
+    }
+
+    &-bounce {
+      background: rgb(157, 84, 84);
+    }
+  }
+
+  &__users {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    &-daily {
+      background: gray;
+      grid-column: 1/6;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-row: 1/-1;
+      grid-gap: 20px;
+    }
+
+    &-monthly {
+      background-color: green;
+      grid-column: 6/-1;
+      display: grid;
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__deliveries {
+    grid-column: center-start / center-end;
+    margin: 20px 0;
+
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(7, 1fr);
+
+    &-daily {
+      background-color: red;
+      grid-column: 1/6;
+    }
+
+    &-product {
+      background-color: green;
+      grid-column: 6/-1;
+    }
+  }
+
+  &__sales {
+    grid-column: center-start / center-end;
+    margin: 20px 0;
+
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(7, 1fr);
+
+    &-daily {
+      background-color: black;
+      grid-column: 1/6;
+    }
+
+    &-monthly {
+      grid-column: 6/-1;
+      background: red;
+    }
+  }
+}

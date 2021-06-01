@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Admin</title>
+  </head>
+  <body class="container">
+    <div class="sidebar__admin">
+      <div class="sidebar__admin-info">
+        <div class="sidebar__admin-photo">
+          <img src="images/admin.jpg" alt="admin-photo" />
+        </div>
+        <div class="sidebar__admin-name">Matt Hummels</div>
+        <div class="sidebar__admin-email">mattttt@gmail.com</div>
+        <button class="sidebar__admin-upgrade btn">Log Out</button>
+      </div>
+
+      <ul class="sidebar__admin-options">
+        <li class="sidebar__admin-options--home">
+          <a href="#">
+            <span class="image">
+              <svg class="sidebar__admin-options--home__img">
+                <use xlink:href="images/sprite.svg#icon-home3"></use>
+              </svg>
+            </span>
+            <p class="title">Home</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--transactions">
+          <a href="orders.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--transactions__img">
+                <use xlink:href="images/sprite.svg#icon-menu"></use>
+              </svg>
+            </span>
+            <p class="title">Orders</p>
+            <span class="number"> 45</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--sales">
+          <a href="sales.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--sales__img">
+                <use xlink:href="images/sprite.svg#icon-bar-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Sales</p>
+            <span class="number sold"> 15</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--products">
+          <a href="products.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--products__img">
+                <use xlink:href="images/sprite.svg#icon-box"></use>
+              </svg>
+            </span>
+            <p class="title">Products</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--users">
+          <a href="users.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--users__img">
+                <use xlink:href="images/sprite.svg#icon-users"></use>
+              </svg>
+            </span>
+            <p class="title">Users</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--analysis">
+          <a href="#">
+            <span class="image">
+              <svg class="sidebar__admin-options--analysis__img">
+                <use xlink:href="images/sprite.svg#icon-line-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Analysis</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-body">
+      <div class="header">
+        <div class="header__cta">
+          <div class="header__cta-addbtn">
+            <button class="header__cta-addbtn--img">+</button>
+            <div class="header__cta-addbtn--text"><p>Add Product</p></div>
+          </div>
+
+          <!-- Remove product -->
+          <div class="header__cta-deletebtn">
+            <button class="header__cta-deletebtn--img">-</button>
+            <div class="header__cta-deletebtn--text">
+              <p>Delete Product</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="header__search">
+          <div class="header__search-text">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Type in here"
+            />
+          </div>
+          <div class="header__search-btn">
+            <button type="submit" value="Search">Search</button>
+          </div>
+        </div>
+
+        <div class="header__profile">
+          <div class="header__profile-pix">
+            <img
+              src="images/admin.jpg"
+              alt="profile-img"
+              class="header__profile-pix--001"
+            />
+          </div>
+          <div class="header__profile-name"><p>Alan Jones</p></div>
+        </div>
+      </div>
+
+      <section class="dashboard">
+        <div class="dashboard__title">
+          <h2 class="dashboard__title-00">Ecommerce Dashboard</h2>
+          <h4 class="dashboard__title-01">Dashboard > Ecommerce Dashboard</h4>
+        </div>
+
+        <div class="dashboard__time">
+          <button class="dashboard__time-day">Day</button>
+          <button class="dashboard__time-week">Week</button>
+          <button class="dashboard__time-month">Month</button>
+          <button class="dashboard__time-year">Year</button>
+        </div>
+
+        <div class="dashboard__date">
+          <button class="dashboard__date-prev">
+            <svg class="dashboard__date-prev__icon">
+              <use xlink:href="images/sprite.svg#icon-chevron-left"></use>
+            </svg>
+          </button>
+          <button class="dashboard__date-day">24th May 2020</button>
+          <button class="dashboard__date-next">
+            <svg class="dashboard__date-next__icon">
+              <use xlink:href="images/sprite.svg#icon-chevron-right"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="analytics">
+        <div class="analytics__new-orders">
+          <div class="analytics__new-orders--heading"><h2>New Orders</h2></div>
+          <div class="analytics__new-orders--numbers"><p>2345</p></div>
+
+          <div class="analytics__new-orders--rate"><p>2.00% (30 days)</p></div>
+
+          <div class="analytics__new-orders--img">
+            <svg class="analytics__new-orders--img__icon">
+              <use xlink:href="images/sprite.svg#icon-swap"></use>
+            </svg>
+          </div>
+
+          <div class="analytics__new-orders--pix">
+            <img src="images/trend.PNG" alt="new-order-pix" />
+          </div>
+        </div>
+
+        <!-- Total income -->
+
+        <div class="analytics__income">
+          <div class="analytics__income--heading">
+            <h2>TOTAL INCOME</h2>
+          </div>
+          <div class="analytics__income--numbers"><p>$14,966</p></div>
+
+          <div class="analytics__income--rate">
+            <p>Increased by 7.35%</p>
+          </div>
+
+          <div class="analytics__income--img">
+            <svg class="analytics__income--img__icon">
+              <use xlink:href="images/sprite.svg#icon-swap"></use>
+            </svg>
+          </div>
+
+          <div class="analytics__income--pix">
+            <img src="images/trend-00.jpg" alt="new-order-pix" />
+          </div>
+        </div>
+
+        <!-- Total expenses -->
+        <div class="analytics__expenses">
+          <div class="analytics__expenses--heading">
+            <h2>TOTAL EXPENSE</h2>
+          </div>
+          <div class="analytics__expenses--numbers"><p>26526</p></div>
+
+          <div class="analytics__expenses--rate">
+            <p>Increased by 7.35%</p>
+          </div>
+
+          <div class="analytics__expenses--img">
+            <svg class="analytics__expenses--img__icon">
+              <use xlink:href="images/sprite.svg#icon-swap"></use>
+            </svg>
+          </div>
+
+          <div class="analytics__expenses--pix">
+            <img src="images/trend-00.jpg" alt="new-order-pix" />
+          </div>
+        </div>
+
+        <!-- Total new users -->
+
+        <div class="analytics__new-users">
+          <div class="analytics__new-users--heading"><h2>NEW USERS</h2></div>
+          <div class="analytics__new-users--numbers"><p>32566</p></div>
+
+          <div class="analytics__new-users--rate">
+            <p>54.1% less earnings</p>
+          </div>
+
+          <div class="analytics__new-users--img">
+            <svg class="analytics__new-users--img__icon">
+              <use xlink:href="images/sprite.svg#icon-swap"></use>
+            </svg>
+          </div>
+
+          <div class="analytics__new-users--pix">
+            <img src="images/trend.PNG" alt="new-order-pix" />
+          </div>
+        </div>
+      </section>
+
+      <section class="summary">
+        <div class="summary__revenue">
+          <p class="summary__revenue-title">Summary</p>
+
+          <div class="summary__revenue-info">
+            <div class="summary__revenue-info--product">
+              <p class="summary__revenue-info--product__amount">$3456M</p>
+              <p class="summary__revenue-info--product_title">Products</p>
+            </div>
+
+            <div class="summary__revenue-info--sales">
+              <p class="summary__revenue-info--sales__amount">$3456M</p>
+              <p class="summary__revenue-info--sales__title">Sales</p>
+            </div>
+
+            <div class="summary__revenue-info--costs">
+              <p class="summary__revenue-info--costs__amount">$3456M</p>
+              <p class="summary__revenue-info--costs__title">Costs</p>
+            </div>
+
+            <div class="summary__revenue-info--revenue">
+              <p class="summary__revenue-info--revenue__amount">$3456M</p>
+              <p class="summary__revenue-info--revenue__title">Revenue</p>
+            </div>
+          </div>
+
+          <div class="summary__revenue-img">
+            <img
+              src="images/line-graph-00.jpg"
+              alt="summary-img"
+              class="revenue-img"
+            />
+          </div>
+        </div>
+
+        <div class="summary__tops">
+          <p class="summary__tops-title">Top Selling Products</p>
+
+          <div class="summary__tops-info">
+            <div class="summary__tops-info--img">
+              <img src="images/shopappanterImages/p1.jpg" alt="product-img" />
+            </div>
+            <div class="summary__tops-info--item">
+              <div class="summary__tops-info--item__name">
+                <h4>Speaker</h4>
+                <span class="rating"></span>
+              </div>
+              <div class="summary__tops-info--item__type">USB Wireless</div>
+              <div class="summary__tops-info--item__description">
+                White • Slate fabric • Hands-free
+              </div>
+            </div>
+
+            <div class="summary__tops-info--priceList">
+              <div class="summary__tops-info--priceList__amount">
+                <h4>$3456</h4>
+                <p class="category">Sales</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary__tops-info">
+            <div class="summary__tops-info--img">
+              <img src="images/shopappanterImages/p2.jpg" alt="product-img" />
+            </div>
+            <div class="summary__tops-info--item">
+              <div class="summary__tops-info--item__name">
+                <h4>Speaker</h4>
+                <span class="summary__tops-info--item__name-rating">
+                  <!-- <svg class="summary__tops-info--item__name-rating__icon">
+                    <use xlink:href="images/sprite.svg#icon-star-empty"></use>
+                  </svg> -->
+                  <!-- <svg class="summary__tops-info--item__name-rating__icon">
+                    <use xlink:href="images/sprite.svg#icon-star-empty"></use>
+                  </svg> -->
+                </span>
+              </div>
+              <div class="summary__tops-info--item__type">USB Wireless</div>
+              <div class="summary__tops-info--item__description">
+                White • Slate fabric • Hands-free
+              </div>
+            </div>
+
+            <div class="summary__tops-info--priceList">
+              <div class="summary__tops-info--priceList__amount">
+                <h4>$3456</h4>
+                <p class="category">Sales</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary__tops-info">
+            <div class="summary__tops-info--img">
+              <img src="images/shopappanterImages/p3.jpg" alt="product-img" />
+            </div>
+            <div class="summary__tops-info--item">
+              <div class="summary__tops-info--item__name">
+                <h4>Speaker</h4>
+                <span class="rating"></span>
+              </div>
+              <div class="summary__tops-info--item__type">USB Wireless</div>
+              <div class="summary__tops-info--item__description">
+                White • Slate fabric • Hands-free
+              </div>
+            </div>
+
+            <div class="summary__tops-info--priceList">
+              <div class="summary__tops-info--priceList__amount">
+                <h4>$3456</h4>
+                <p class="category">Sales</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Activities section -->
+      <section class="activities">
+        <div class="activities__order1">
+          <div class="activities__order1-title">
+            <h4 class="activities__order1-title--text">Order Activity</h4>
+            <div class="activities__order1-tittle--img">
+              <img src="images/more.svg" alt="more-img" />
+            </div>
+          </div>
+
+          <div class="activities__order1-delivered">
+            <div class="activities__order1-delivered--img">
+              <img src="images/jean-jacket.jpg" alt="deliverved-img" />
+            </div>
+
+            <div class="activities__order1-delivered--state">
+              <h4 class="activities__order1-delivered--state__status">
+                Delivered
+              </h4>
+              <p class="activities__order1-delivered--state__name">Iphone X</p>
+            </div>
+
+            <div class="activities__order1-delivered__time">
+              <p class="activities__order1-delivered__time--time">
+                20 mins ago
+              </p>
+            </div>
+          </div>
+
+          <div class="activities__order1-delivered">
+            <div class="activities__order1-delivered--img">
+              <img src="images/jean-gown.jfif" alt="deliverved-img" />
+            </div>
+
+            <div class="activities__order1-delivered--state">
+              <h4 class="activities__order1-delivered--state__status">
+                Delivered
+              </h4>
+              <p class="activities__order1-delivered--state__name">Jean Gown</p>
+            </div>
+
+            <div class="activities__order1-delivered__time">
+              <p class="activities__order1-delivered__time--time">
+                20 mins ago
+              </p>
+            </div>
+          </div>
+
+          <div class="activities__order1-delivered">
+            <div class="activities__order1-delivered--img">
+              <img src="images/shoe-1.jfif" alt="deliverved-img" />
+            </div>
+
+            <div class="activities__order1-delivered--state">
+              <h4 class="activities__order1-delivered--state__status">
+                Delivered
+              </h4>
+              <p class="activities__order1-delivered--state__name">Shoe</p>
+            </div>
+
+            <div class="activities__order1-delivered__time">
+              <p class="activities__order1-delivered__time--time">
+                20 mins ago
+              </p>
+            </div>
+          </div>
+
+          <div class="activities__order1-delivered">
+            <div class="activities__order1-delivered--img">
+              <img src="images/top-4.jfif" alt="deliverved-img" />
+            </div>
+
+            <div class="activities__order1-delivered--state">
+              <h4 class="activities__order1-delivered--state__status">
+                Delivered
+              </h4>
+              <p class="activities__order1-delivered--state__name">Shirt X</p>
+            </div>
+
+            <div class="activities__order1-delivered__time">
+              <p class="activities__order1-delivered__time--time">
+                20 mins ago
+              </p>
+            </div>
+          </div>
+
+          <div class="activities__order1-delivered">
+            <div class="activities__order1-delivered--img">
+              <img src="images/baby-doll.jfif" alt="deliverved-img" />
+            </div>
+
+            <div class="activities__order1-delivered--state">
+              <h4 class="activities__order1-delivered--state__status">
+                Delivered
+              </h4>
+              <p class="activities__order1-delivered--state__name">Doll</p>
+            </div>
+
+            <div class="activities__order1-delivered__time">
+              <p class="activities__order1-delivered__time--time">
+                20 mins ago
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="activities__recent">
+          <div class="activities__recent-title">
+            <h4 class="activities__recent-title--text">Recent Products</h4>
+            <div class="activities__recent-tittle--img">
+              <img src="images/more.svg" alt="more-img" />
+            </div>
+          </div>
+
+          <div class="activities__recent-product">
+            <h4 class="activities__recent-product--name">Bag</h4>
+            <div class="activities__recent-product--img">
+              <img src="images/bag-1.jfif" alt="prdouct-img" />
+            </div>
+            <p class="activities__recent-product--description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
+              maxime voluptates aspernatur tempora consequatur.
+            </p>
+
+            <div class="activities__recent-product--broughtIn">
+              <p class="activities__recent-product--broughtIn__date">
+                5 days ago
+              </p>
+              <a href="#"> <button class="online">online</button> </a>
+              <a href="#"> <button class="customer">Customer</button> </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="activities__order2">
+          <div class="activities__order2-title">
+            <h4 class="activities__order2-title--text">Order Activity</h4>
+            <div class="activities__order2-tittle--img">
+              <img src="images/more.svg" alt="more-img" />
+            </div>
+          </div>
+
+          <div class="activities__order2-customer">
+            <div class="activities__order2-customer--profile-pix">
+              <img src="images/julian.jpg" alt="customer-pix" />
+            </div>
+
+            <div class="activities__order2-customer--info">
+              <h4 class="activities__order2-customer--info__name">
+                John SirClef
+              </h4>
+              <p class="activities__order2-customer--info__id">X3F-1003</p>
+            </div>
+
+            <div class="activities__order2-customer--itemsImage">
+              <div class="activities__order2-customer--itemsImage__image1">
+                <img src="images/shoe-1.jfif" alt="item-img" />
+              </div>
+              <div class="activities__order2-customer--itemsImage__image2">
+                <img src="images/plain-top.jfif" alt="item-img" />
+              </div>
+            </div>
+          </div>
+
+          <div class="activities__order2-customer">
+            <div class="activities__order2-customer--profile-pix">
+              <img src="images/admin2.jpg" alt="customer-pix" />
+            </div>
+
+            <div class="activities__order2-customer--info">
+              <h4 class="activities__order2-customer--info__name">
+                John SirClef
+              </h4>
+              <p class="activities__order2-customer--info__id">X3F-1003</p>
+            </div>
+
+            <div class="activities__order2-customer--itemsImage">
+              <div class="activities__order2-customer--itemsImage__image1">
+                <img src="images/mans-clothes.jfif" alt="item-img" />
+              </div>
+              <div class="activities__order2-customer--itemsImage__image2">
+                <img src="images/belt-1.jfif" alt="item-img" />
+              </div>
+            </div>
+          </div>
+
+          <div class="activities__order2-customer">
+            <div class="activities__order2-customer--profile-pix">
+              <img src="images/admin1.jpg" alt="customer-pix" />
+            </div>
+
+            <div class="activities__order2-customer--info">
+              <h4 class="activities__order2-customer--info__name">
+                John SirClef
+              </h4>
+              <p class="activities__order2-customer--info__id">X3F-1003</p>
+            </div>
+
+            <div class="activities__order2-customer--itemsImage">
+              <div class="activities__order2-customer--itemsImage__image1">
+                <img src="images/top-2.jfif" alt="item-img" />
+              </div>
+              <div class="activities__order2-customer--itemsImage__image2">
+                <img src="images/top-4.jfif" alt="item-img" />
+              </div>
+            </div>
+          </div>
+
+          <div class="activities__order2-customer">
+            <div class="activities__order2-customer--profile-pix">
+              <img src="images/admin1.jpg" alt="customer-pix" />
+            </div>
+
+            <div class="activities__order2-customer--info">
+              <h4 class="activities__order2-customer--info__name">
+                John SirClef
+              </h4>
+              <p class="activities__order2-customer--info__id">X3F-1003</p>
+            </div>
+
+            <div class="activities__order2-customer--itemsImage">
+              <div class="activities__order2-customer--itemsImage__image1">
+                <img src="images/womans-clothes.jfif" alt="item-img" />
+              </div>
+              <div class="activities__order2-customer--itemsImage__image2">
+                <img src="images/rose-red-gown.jfif" alt="item-img" />
+              </div>
+            </div>
+          </div>
+
+          <div class="activities__order2-customer">
+            <div class="activities__order2-customer--profile-pix">
+              <img src="images/julian.jpg" alt="customer-pix" />
+            </div>
+
+            <div class="activities__order2-customer--info">
+              <h4 class="activities__order2-customer--info__name">
+                John SirClef
+              </h4>
+              <p class="activities__order2-customer--info__id">X3F-1003</p>
+            </div>
+
+            <div class="activities__order2-customer--itemsImage">
+              <div class="activities__order2-customer--itemsImage__image1">
+                <img src="images/shoe-2.jfif" alt="item-img" />
+              </div>
+              <div class="activities__order2-customer--itemsImage__image2">
+                <img src="images/child-3.jfif" alt="item-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="product">
+        <div class="product-category">
+          <div class="product-category__name">
+            <h2 class="product-category__name-music">Music</h2>
+          </div>
+          <div class="product-category__image">
+            <img src="images/shoe-2.jfif" alt="Music-img" />
+          </div>
+          <div class="product-category__description">
+            <h2 class="product-category__description-text">Headphone</h2>
+            <p class="product-category__description-deatil">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+
+          <div class="product-category__action">
+            <div class="product-category__action-price">
+              <h4 class="product-category__action-price--main">$100</h4>
+              <p class="product-category__action-price--initial">$150</p>
+            </div>
+
+            <a href="#">
+              <button class="addCart">Add Cart</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="product-category">
+          <div class="product-category__name">
+            <h2 class="product-category__name-music">Watch</h2>
+          </div>
+          <div class="product-category__image">
+            <img src="images/child-2.jfif" alt="Music-img" />
+          </div>
+          <div class="product-category__description">
+            <h2 class="product-category__description-text">Apple Watch</h2>
+            <p class="product-category__description-deatil">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+
+          <div class="product-category__action">
+            <div class="product-category__action-price">
+              <h4 class="product-category__action-price--main">$100</h4>
+              <p class="product-category__action-price--initial">$150</p>
+            </div>
+
+            <a href="#">
+              <button class="addCart">Add Cart</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Third Category -->
+
+        <div class="product-category">
+          <div class="product-category__name">
+            <h2 class="product-category__name-music">Phone</h2>
+          </div>
+          <div class="product-category__image">
+            <img src="images/acc-2.jfif" alt="Music-img" />
+          </div>
+          <div class="product-category__description">
+            <h2 class="product-category__description-text">Samsung</h2>
+            <p class="product-category3__description-deatil">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+
+          <div class="product-category__action">
+            <div class="product-category__action-price">
+              <h4 class="product-category__action-price--main">$100</h4>
+              <p class="product-category__action-price--initial">$150</p>
+            </div>
+
+            <a href="#">
+              <button class="addCart">Add Cart</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- sold products -->
+      <div class="sold-products">
+        <div class="sold-products__title">
+          <h2 class="sold-products__title-text">Sold Products</h2>
+          <a href="">
+            <button class="sold-products__title-action">
+              <span class="sold-products__title-action--img">
+                <svg class="sold-products__title-action--img-icon">
+                  <use xlink:href="images/sprite.svg#icon-download"></use>
+                </svg>
+              </span>
+              Export
+            </button>
+          </a>
+        </div>
+        <!-- <div class="sold-products__table">
+          <div class="sold-products__table-name">
+            <h2>Product</h2>
+          </div>
+
+          <div class="sold-products__table-revenue">
+            <h2>Revenue</h2>
+          </div>
+
+          <div class="sold-products__table-sold">
+            <h2>Sold</h2>
+          </div>
+          <div class="sold-products__table-discount">
+            <h2>Discount</h2>
+          </div>
+        </div> -->
+
+<!--  -->
+
+<table class="sold-products__details">
+  <thead class="sold-products__details-heading">
+    <th>Product</th>
+    <th>Revenue</th>
+    <th>Sold</th>
+    <th>Discount</th>
+   
+  </thead>
+
+
+ <!-- First product -->
+  <tbody class="sold-products__details-body">
+    <tr class="sold-products__details-body__row--000">
+      <td data-label="Product" class="product-name">
+        <span class="product-img">
+          <input type="checkbox"  class="checkbox"/>
+        </span>
+         <span class="image-product"> <img src="images/shoe-2.jfif" alt="item-image" class="image" />
+         </span>
+          <h4>Nike Running Shoe</h4>
+       
+      </td>
+      <td data-label="Revenue">
+        <h4>$500.00</h4>
+      </td>
+      <td data-label="Sold">
+        <h4>2</h4>
+      </td>
+      <td data-label="Discount">
+        <h4>$500.00</h4>
+      </td> 
+    </tr>
+
+
+
+
+    <tr class="sold-products__details-body__row--000">
+      <td data-label="Product" class="product-name">
+        <span class="product-img">
+          <input type="checkbox"  class="checkbox"/>
+        </span>
+         <span class="image-product"> <img src="images/acc-4.jfif" alt="item-image" class="image" />
+         </span>
+          <h4>Nike Running Shoe</h4>
+       
+      </td>
+      <td data-label="Revenue">
+        <h4>$500.00</h4>
+      </td>
+      <td data-label="Sold">
+        <h4>3</h4>
+      </td>
+      <td data-label="Discount">
+        <h4>$500.00</h4>
+      </td> 
+    </tr>
+
+
+
+
+    <tr class="sold-products__details-body__row--000">
+      <td data-label="Product" class="product-name">
+        <span class="product-img">
+          <input type="checkbox"  class="checkbox"/>
+        </span>
+         <span class="image-product"> <img src="images/shoe-1.jfif" alt="item-image" class="image" />
+         </span>
+          <h4>Nike Running Shoe</h4>
+       
+      </td>
+      <td data-label="Revenue">
+        <h4>$500.00</h4>
+      </td>
+      <td data-label="Sold">
+        <h4>4</h4>
+      </td>
+      <td data-label="Discount">
+        <h4>$500.00</h4>
+      </td> 
+    </tr>
+
+  
+
+  </tbody>
+
+   
+
+       
+    
+
+      
+
+        <!--  -->
+      </div>
+    </div>
+  </body>
+</html>

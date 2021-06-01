@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Admin</title>
+  </head>
+  <body class="container">
+    <div class="sidebar__admin">
+      <div class="sidebar__admin-info">
+        <div class="sidebar__admin-photo">
+          <img src="images/admin.jpg" alt="admin-photo" />
+        </div>
+        <div class="sidebar__admin-name">Matt Hummels</div>
+        <div class="sidebar__admin-email">mattttt@gmail.com</div>
+        <button class="sidebar__admin-upgrade btn">Log Out</button>
+      </div>
+
+      <ul class="sidebar__admin-options">
+        <li class="sidebar__admin-options--home">
+          <a href="admin.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--home__img">
+                <use xlink:href="images/sprite.svg#icon-home3"></use>
+              </svg>
+            </span>
+            <p class="title">Home</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--transactions">
+          <a href="orders.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--transactions__img">
+                <use xlink:href="images/sprite.svg#icon-menu"></use>
+              </svg>
+            </span>
+            <p class="title">Orders</p>
+            <span class="number"> 45</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--sales">
+          <a href="sales.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--sales__img">
+                <use xlink:href="images/sprite.svg#icon-bar-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Sales</p>
+            <span class="number sold"> 15</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--products">
+          <a href="products.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--products__img">
+                <use xlink:href="images/sprite.svg#icon-box"></use>
+              </svg>
+            </span>
+            <p class="title">Products</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--users">
+          <a href="users.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--users__img">
+                <use xlink:href="images/sprite.svg#icon-users"></use>
+              </svg>
+            </span>
+            <p class="title">Users</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--analysis">
+          <a href="analytics.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--analysis__img">
+                <use xlink:href="images/sprite.svg#icon-line-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Analysis</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-body">
+      <div class="sales">
+        <h2 class="sales__heading">Rexha Sales</h2>
+
+        <div class="sales__export">
+          <a href="#">
+            <div class="sales__export-print">
+              <span class="sales__export-print--img">
+                <svg class="sales__export-print--img__icon">
+                  <use xlink:href="images/sprite.svg#icon-download"></use>
+                </svg>
+              </span>
+              <p class="sales__export-print--text">Export</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="sales__search">
+          <input
+            type="search"
+            name="search"
+            id="export-search"
+            placeholder="Search"
+          />
+        </div>
+
+        <!-- Sales Tables -->
+        <table class="sales__details">
+          <thead class="sales__details-heading">
+            <th>No</th>
+            <th>Customer</th>
+            <th>Sale Date</th>
+            <th>Email</th>
+            <th>Image</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Payment Status</th>
+          </thead>
+
+          <tbody class="sales__details-body">
+            <tr class="sales__details-body__row--000">
+              <td data-label="No">1</td>
+              <td data-label="Customer">Michael Olabanjo</td>
+              <td data-label="Sale Date">12-09-2021</td>
+              <td data-label="Email">godisgood@gmail.com</td>
+              <td data-label="Image">
+                <img src="images/jean-gown.jfif" alt="item-image" />
+              </td>
+              <td data-label="Item">Jacket Exclusive</td>
+              <td data-label="Quantity">2</td>
+              <td data-label="Amount">$300</td>
+              <td data-label="Payment Status">
+                <p class="payment__status-paid">Paid</p>
+              </td>
+            </tr>
+
+            <tr class="sales__details-body__row--001">
+              <td data-label="No">2</td>
+              <td data-label="Customer">Michael Shaba Philip</td>
+              <td data-label="Sale Date">12-09-2021</td>
+              <td data-label="Email">michaelmusic123@gmail.com</td>
+              <td data-label="Image">
+                <img src="images/shopappanterImages/p2.jpg" alt="item-image" />
+              </td>
+              <td data-label="Item">Gucci X Exclusive</td>
+              <td data-label="Quantity">2</td>
+              <td data-label="Amount">$300</td>
+              <td data-label="Payment Status">
+                <p class="payment__status-pending">Pending</p>
+              </td>
+            </tr>
+
+            <tr class="sales__details-body__row--002">
+              <td data-label="No">3</td>
+              <td data-label="Customer">Michael Olabanjo</td>
+              <td data-label="Sale Date">12-09-2021</td>
+              <td data-label="Email">godisgood@gmail.com</td>
+              <td data-label="Image">
+                <img src="images/shoe-1.jfif" alt="item-image" />
+              </td>
+              <td data-label="Item">Jacket Exclusive</td>
+              <td data-label="Quantity">2</td>
+              <td data-label="Amount">$300</td>
+              <td data-label="Payment Status">
+                <p class="payment__status-paid">Paid</p>
+              </td>
+            </tr>
+
+            <tr class="sales__details-body__row--003">
+              <td data-label="No">4</td>
+              <td data-label="Customer">Michael Olabanjo</td>
+              <td data-label="Sale Date">12-09-2021</td>
+              <td data-label="Email">godisgood@gmail.com</td>
+              <td data-label="Image">
+                <img src="images/shoe-2.jfif" alt="item-image" />
+              </td>
+              <td data-label="Item">Jacket Exclusive</td>
+              <td data-label="Quantity">2</td>
+              <td data-label="Amount">$300</td>
+              <td data-label="Payment Status">
+                <p class="payment__status-paid">Paid</p>
+              </td>
+            </tr>
+
+            <tr class="sales__details-body__row--004">
+              <td data-label="No">5</td>
+              <td data-label="Customer">Michael Shaba Philip</td>
+              <td data-label="Sale Date">12-09-2021</td>
+              <td data-label="Email">michaelmusic123@gmail.com</td>
+              <td data-label="Image">
+                <img src="images/rose-red-gown.jfif" alt="item-image" />
+              </td>
+              <td data-label="Item">Gucci X Exclusive</td>
+              <td data-label="Quantity">2</td>
+              <td data-label="Amount">$300</td>
+              <td data-label="Payment Status">
+                <p class="payment__status-pending">Pending</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

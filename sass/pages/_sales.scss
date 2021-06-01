@@ -1,0 +1,183 @@
+.sales {
+  margin: 1.42857rem;
+
+  &__heading {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.71429rem;
+    margin-bottom: 1.42857rem;
+  }
+  &__export {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+    }
+
+    &-print {
+      background-color: var(--upgrade-button-color);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0.35714rem;
+      &--img {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        &__icon {
+          width: 100%;
+          height: 100%;
+          fill: white;
+        }
+      }
+      &--text {
+        color: var(--primary-text-color);
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__search {
+    margin: 1.42857rem 0px;
+    display: flex;
+    justify-content: flex-end;
+
+    [type="search"] {
+      padding: 0.71429rem;
+      border: 1px solid #ccc;
+      box-shadow: 0.21429rem 0.21429rem 0.71429rem 0.42857rem #ccc;
+
+      &:focus {
+        border: 1px solid #ddd;
+        outline: 0;
+      }
+    }
+  }
+}
+
+.sales__details {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 0.85714rem 1.07142rem;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+  [data-label="Image"] {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  [data-label="Payment Status"] {
+    color: var(--primary-text-color);
+    .payment__status {
+      &-paid {
+        background-color: var(--upgrade-button-color);
+        width: 4rem;
+        border-radius: 0.71429rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.71429rem;
+        font-weight: bold;
+      }
+
+      &-pending {
+        background-color: var(--new-users-bg);
+        width: 5rem;
+        border-radius: 0.71429rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.71429rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-heading {
+    background-color: var(--sidebar-color);
+    color: var(--primary-text-color);
+  }
+
+  &-body tr:nth-child(even) {
+    background-color: var(--light-gray);
+  }
+  &-body tr:nth-child(odd) {
+    background-color: var(--primary-text-color);
+  }
+}
+
+//MEDIA QUERY
+@media screen and (max-width: 600px) {
+  .sales__details-heading {
+    display: none;
+  }
+
+  .sales__details,
+  .sales__details-body,
+  .sales__details tr,
+  .sales__details td {
+    display: block;
+    width: 100%;
+  }
+
+  .sales__details tr {
+    margin-bottom: 1.78571rem;
+    border-radius: 0.71429rem;
+    border: 0.14286rem solid #ddd;
+  }
+
+  .sales__details td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .sales__details td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 1.07142rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .sales__details {
+    [data-label="Payment Status"] {
+      color: inherit;
+      .payment__status {
+        &-paid {
+          background-color: red;
+          width: 3rem;
+          border-radius: 0.71429rem;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 0;
+          padding: 0.71429rem 0.71429rem;
+          color: var(--primary-text-color);
+        }
+
+        &-pending {
+          background-color: var(--new-users-bg);
+          width: 4.5rem;
+          border-radius: 0.71429rem;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0.71429rem;
+          color: var(--primary-text-color);
+        }
+      }
+    }
+  }
+}
