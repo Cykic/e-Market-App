@@ -1,22 +1,32 @@
+import { spinner } from "./helper.js";
+
 export class Cart {
   cart = [];
   products = [];
-  constructor() {}
+  constructor() {
+
+  }
   cartContainer = document.querySelector(".cart-container");
-  totalLabel = document.querySelector('#total-amount')
-  subTotalLabel = document.querySelector('#sub-total')
-  deliveryLabel = document.querySelector('#delivery')
-  deliveryLabel = document.querySelector('#delivery')
-  cartCount = document.querySelector("#cart-count")
-  conversionRate = 410.93
-  totalAmt
+  totalLabel = document.querySelector("#total-amount");
+  subTotalLabel = document.querySelector("#sub-total");
+  deliveryLabel = document.querySelector("#delivery");
+  deliveryLabel = document.querySelector("#delivery");
+  cartCount = document.querySelector("#cart-count");
+  checkoutbtn = document.querySelector(".checkout-btn");
+  subTotalCount = document.querySelector(".subtotal-count");
+  
+
+  conversionRate = 410.93;
+  totalAmt;
 
   async getAllProducts() {
     try {
       // Hit API Endpoint
+      spinner(true)
       const res = await fetch(
         "https://shopappanter.herokuapp.com/api/products"
       );
+      spinner(false)
       if (!res.ok) throw new Error("Request failed");
 
       const data = await res.json();
@@ -50,19 +60,15 @@ export class Cart {
   }
 
   total() {
-   
-    const delivery = 3
+    let delivery = 3;
     const subTotal = this.cart.reduce((sum, prd) => sum + prd.price, 0);
-    const totalAmount = subTotal + delivery
-    this.totalLabel.textContent = `${this._numberFormat(totalAmount)}`
-    this.deliveryLabel.textContent = `${this._numberFormat(delivery)}`
-    this.subTotalLabel.textContent = `${this._numberFormat(subTotal)}`
-    this.totalAmt = Math.floor(totalAmount * this.conversionRate)
-    return totalAmount
-  }
-
-  proceedToCheckout() {
-    
+    if (subTotal === 0) delivery = 0;
+    const totalAmount = subTotal + delivery;
+    this.totalLabel.textContent = `${this._numberFormat(totalAmount)}`;
+    this.deliveryLabel.textContent = `${this._numberFormat(delivery)}`;
+    this.subTotalLabel.textContent = `${this._numberFormat(subTotal)}`;
+    this.totalAmt = Math.floor(totalAmount * this.conversionRate);
+    return totalAmount;
   }
 
   findProduct(id) {
@@ -108,6 +114,7 @@ export class Cart {
       `;
 
       this.cartContainer.insertAdjacentHTML("afterbegin", html);
+      this.cartContainer.classList.remove("hide")
     });
 
     const prdRemoveBtn = document.querySelectorAll(".prd-remove");
@@ -116,8 +123,11 @@ export class Cart {
       btn.addEventListener("click", this.removeHandler.bind(this, btn));
     });
     this.total();
-    console.log(this.totalAmt)
-    this.cartCount.textContent = `Your Cart: ${this.cart.length} Item (s)`
+    console.log(this.totalAmt);
+    this._labelChanges();
+
+    // LOCAL STORAGE
+    localStorage.setItem("cart", JSON.stringify(this.cart));
   }
 
   _clear() {
@@ -134,7 +144,18 @@ export class Cart {
     this._updateCart();
   }
 
-  _numberFormat(number){
-   return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(Math.floor(number * this.conversionRate))
+  _numberFormat(number) {
+    return new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+    }).format(Math.floor(number * this.conversionRate));
+  }
+
+  _labelChanges() {
+    this.cartCount.textContent = `Your Cart: ${this.cart.length} Item (s)`;
+    this.checkoutbtn.textContent = `Checkout (${this.cart.length})`;
+    this.subTotalCount.textContent = `(${this.cart.length} ${
+      this.cart.length > 1 ? "Items" : "Item"
+    })`;
   }
 }

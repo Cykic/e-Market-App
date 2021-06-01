@@ -12,7 +12,7 @@
 
     <p id="cart-count">Your Cart: 1 Item</p> 
     
-    <div class="cart-container">
+    <div class="cart-container hide">
       <div class="body-flex">
         <!-- PRODUCT -->
       <div class="prd">
@@ -50,31 +50,41 @@
   </div>
  
 
-<button id="test">Get Products</button>
-
   <!-- END PRODUCT -->
-<!-- checkout container -->
+<!-- checkout container --><div class="sk-chase hide">
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+  </div>
+
     <div class="checkout-container">
       <!-- subtotal -->
       <div class="flex-container">
-        <p>Subtotal<span>(1 item)</span></p>
-        <p id="sub-total">₦12,500</p>
+        <p>Subtotal<span class="subtotal-count">(0 item)</span></p>
+        <p id="sub-total">₦0</p>
       </div>
       <!-- Delivery -->
       <div class="flex-container">
         <p>Delivery</p>
-        <p id="delivery">₦1,200</p>
+        <p id="delivery">₦0</p>
       </div>
       <!-- total -->
       <hr>
       <div class="flex-container">
         <p>Est.total</p>
-        <p id="total-amount" class="bold">₦13,700</p>
+        <p id="total-amount" class="bold">₦0</p>
       </div>
       <!-- checkout -->
-      <button class="checkout-btn">Checkout (1)</span></button>
+      <button class="checkout-btn">Checkout(0)</span></button>
     </div>
   </div>
+<!-- WARNING -->
+  <div class="warning hide">Add Item to Cart to Checkout</div>
+
+ 
 
   </body>
 </html>

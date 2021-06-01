@@ -1,7 +1,8 @@
+import { cart } from "./app.js";
+
 export class Payment {
   resTrans;
   constructor() {
-    
     // this.checkout.addEventListener("click", this.makePayment.bind(this));
   }
 
@@ -33,6 +34,9 @@ export class Payment {
           // console.log(data);
           this.resTrans = data;
           console.log(this.resTrans);
+          if (this.resTrans.status !== "successful") return;
+          cart._clearCart();
+          console.log("cleared Cart");
         },
         onclose: function () {
           // close modal
