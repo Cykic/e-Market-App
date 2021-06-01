@@ -6,6 +6,12 @@
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
+
+    @media screen and (min-width: 43.8em) {
+        width: 15rem;
+        height: 15rem;
+        border-radius: .7rem;
+    }
 }
 
 .flex{

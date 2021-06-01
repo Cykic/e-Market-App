@@ -8,12 +8,6 @@
     width: 100% !important;
 
 
-    // @media screen and (min-width: 25.8em) {
-
-    
-    //     grid-template-rows: 62vh min-content repeat(7, 80vh); 
-    // }
-
     @media screen and (min-width: 72em) {
             grid-template-rows: 92vh repeat(5, min-content);
     }
@@ -28,7 +22,7 @@
         width: 100%;
         grid-column: 1 / 9;
         background-image: linear-gradient(
-        50deg
+        135deg
         , rgba(0, 0, 0, 0.946), rgba(0, 0, 0, 0.563)), url(../img/back-img.jfif);
         background-size: cover;
         background-repeat: no-repeat;   
@@ -71,13 +65,20 @@
             text-align: center;
 
             @media screen and (min-width: 43.8em) {
-                width: 18%;
+                width: 15%;
                 display: flex;
+                flex-direction: column-reverse;
                 align-content: center;
                 align-items: center;
-                background-color: rgba(128, 128, 128, 0.227);
+                background-color: transparent;
                 border-radius: 1rem;
-                box-shadow: .1rem .1rem .5rem #000;
+                cursor: pointer;
+                transition: all .2s;
+
+                &:hover{
+                    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, 0.946);
+                    transform: scale(1.02);
+                }
             }
         }
     }
@@ -110,11 +111,18 @@
                 text-align: center;
                 align-items: center;
                 position: relative;
+                border-radius: .4rem;
+                transition:  .2s;
 
-                // @media screen and (min-width: 25.8em) {
-                //     height: 45%;
-                //      width: 49%;
-                // }
+                @media screen and (min-width: 72em) {
+                    &:hover{
+                        transform: scale(1.01);
+                        cursor: pointer;
+                        box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.439);
+                    }
+                }
+
+
 
                 &__img{
                     width: 50%;
@@ -124,6 +132,7 @@
                     display: block;
                     overflow: hidden;
                     margin-left: 25%;
+                    border-radius: .7rem;
                 }
             }
         }

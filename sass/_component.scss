@@ -2,6 +2,7 @@
     width: 20%;
     background-color: var(--color-tetiary);
     border-radius: 0 1rem 1rem 0;
+    cursor: pointer;
 }
 
 .btn{
@@ -15,6 +16,17 @@
     color: var(--color-tetiary);
     background: transparent;
     cursor: pointer;
+    transition: all .2s;
+
+    &:hover{
+        background-color: var(--color-tetiary);
+        color: var(--color-black);
+        box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.624);
+    }
+
+    &:focus{
+        transform: translateY(.5rem);
+    }
 }
 
 
@@ -26,6 +38,15 @@
     font-size: 1.4rem;
     margin-right: 2rem;
     cursor: pointer;
+    transition: all .2s;
+
+    @media screen and (min-width: 43.8em) {
+       padding: .1rem;
+    }
+
+    &:hover{
+        background-color: var(--color-tetiary);
+    }
 }
 
 .imgs{
@@ -80,25 +101,54 @@
       font-size: 3rem;
       color: var(--color-tetiary);
   }
+   .cart{
+      color: var(--color-primary);
+  }
 
   .cart-number{
       position: absolute;
       font-size: 1.8rem;
-      top: -17%;
-      right: -12%;
-      padding: .3rem .7rem;
+      top: -5%;
+      right: -10%;
+      padding: .1rem .5rem;
       border-radius: 50%;
       font-weight: 500;
-      background-color: rgb(255, 7, 7);
+      background-color: var(--color-tetiary);
       text-align: center;
-      border: 1px var(--color-primary);
+      border: 2px solid var(--color-primary);
   }
 
   .fa-star-o{
-      padding: 0 ;
+      padding: 0;
       background-color: var(--color-tetiary);
       background-clip: text;
       -webkit-background-clip: text;
       display: inline-block;
       color: transparent;
+  }
+
+  .cart{
+      color: var(--color-primary);
+  }
+
+  .block{
+      display: none;
+
+      @media screen and (min-width: 43em) {
+          display: block;
+      }
+  }
+
+  .display{
+      display: none;
+
+      @media screen and (min-width: 18.75em) {
+          display: block;
+      }
+  }
+
+  .display2{
+    @media screen and (min-width: 18.75em) {
+        display: none;
+    }
   }

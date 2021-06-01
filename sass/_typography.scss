@@ -11,6 +11,20 @@
     text-decoration: none;
     font-size: 1.5rem;
     cursor: pointer;
+    
+    border-radius: .2rem;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        background-color: var(--color-tetiary);
+        color: var(--background-color);
+       
+    }
+
+    @media screen and (min-width: 60em) {
+        font-size: 2rem;
+        padding: 1rem;
+    }
 }
 
 .landingPage-header{
@@ -31,6 +45,10 @@
 
 .categories-name{
     font-weight: 400;
+
+    @media screen and (min-width: 43.8em) {
+        font-size: 2rem;
+    }
 }
 
 .discription{
@@ -90,4 +108,9 @@
     color: var(--color-tetiary);
 }
 
-
+.cart-header{
+    font-size: 2.3rem;
+    color: var(--color-black);
+    display: block;
+    text-transform: uppercase;
+}

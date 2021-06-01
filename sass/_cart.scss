@@ -1,0 +1,31 @@
+.cart{
+    
+
+    &__container{
+        background-color: var(--color-primary);
+        &__product{
+            display: flex;
+
+            &__img{
+                display: block;
+                position: relative;
+                overflow: hidden;
+            }
+
+            &__discription{
+
+            }
+        }
+    }
+
+    &__option{
+
+        &__right{
+
+        }
+
+        &__left{
+
+        }
+    }
+}
