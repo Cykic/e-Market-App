@@ -116,7 +116,7 @@
 }
 
 //MEDIA QUERY
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5em) {
   .sales__details-heading {
     display: none;
   }
@@ -154,17 +154,28 @@
   }
 
   .sales__details {
+    [data-label="Image"] {
+      width: auto;
+      height: auto;
+    }
+
+    [data-label="Email"] {
+      padding-left: 0;
+    }
+  }
+
+  .sales__details {
     [data-label="Payment Status"] {
       color: inherit;
+      padding-left: 70%;
       .payment__status {
         &-paid {
-          background-color: red;
           width: 3rem;
           border-radius: 0.71429rem;
           margin-left: auto;
-          margin-right: auto;
-          padding-left: 0;
-          padding: 0.71429rem 0.71429rem;
+          margin-right: 0;
+          padding: 0.71429rem;
+
           color: var(--primary-text-color);
         }
 
@@ -173,7 +184,7 @@
           width: 4.5rem;
           border-radius: 0.71429rem;
           margin-left: auto;
-          margin-right: auto;
+          margin-right: 0;
           padding: 0.71429rem;
           color: var(--primary-text-color);
         }

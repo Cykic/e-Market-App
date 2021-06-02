@@ -1,9 +1,10 @@
 .container {
   display: grid;
-  grid-template-columns: 12rem 1fr;
-}
+  grid-template-columns: 12rem [full-start] 1fr [full-end];
 
-.container-body {
+  @media screen and (max-width: 56.25em) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .dashboard {
@@ -11,11 +12,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  // @media screen and (max-width: 600px) {
-  //   display: none;
-  //   margin: 1.42857rem;
-  // }
 
   &__time {
     align-items: center;
@@ -65,8 +61,6 @@
     }
 
     &-next {
-      // background-color: red;
-
       &__icon {
         width: 0.8rem;
         height: 0.8rem;
@@ -77,34 +71,29 @@
 
 .analytics {
   margin: 1.42857rem;
+  grid-column: full-start/full-end;
+  grid-gap: 1.42857rem;
   display: grid;
-  grid-template-columns:
-    1.42857rem repeat(2, 1fr) 1.42857rem repeat(2, 1fr)
-    1.42857rem repeat(2, 1fr) 1.42857rem repeat(2, 1fr);
-  grid-template-rows: 1.42857rem repeat(2, 1fr) 1.42857rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 
-  // @media screen and (max-width: 600px) {
-  //   border: 0.14286rem solid red;
-  //   // grid-template-columns: repeat(auto-fit, 1fr);
-  // }
+  @media screen and (max-width: 31.5em) {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    margin: 2.85714rem;
+    grid-gap: 2.85714rem;
+  }
 
   &__new-orders {
-    grid-column: 2/4;
-    grid-row: 2/4;
     background-color: var(--new-orders-bg);
     padding: 2.14286rem 2.85714rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
 
     &--heading {
-      grid-column: 1/4;
       text-transform: uppercase;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
 
     &--numbers {
-      grid-column: 1/5;
-      grid-row: 2;
       color: var(--primary-text-color);
       font-size: 2rem;
       font-weight: bold;
@@ -112,29 +101,29 @@
     }
 
     &--rate {
-      grid-column: 1/5;
-      grid-row: 3;
       color: var(--primary-text-color);
     }
 
     &--img {
       background: white;
-      text-align: center;
-      grid-column: 4/5;
-      grid-row: 1/2;
-      padding: 1.07143rem 0.35714rem 0.71429rem 0.35714rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      width: 3rem;
+      height: 3rem;
+      padding: 0.9rem;
       border-radius: 50%;
 
       &__icon {
-        width: 1rem;
-        height: 1rem;
+        width: 100%;
+        height: 100%;
         fill: var(--new-orders-bg);
       }
     }
 
     &--pix {
-      grid-row: 4;
-      grid-column: 1/5;
       padding-top: 1rem;
 
       img {
@@ -144,22 +133,17 @@
   }
 
   &__income {
-    grid-column: 5/7;
-    grid-row: 2/4;
     padding: 2.14286rem 2.85714rem;
     background-color: var(--income-bg);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
+    position: relative;
 
     &--heading {
-      grid-column: 1/4;
       text-transform: uppercase;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
 
     &--numbers {
-      grid-column: 1/5;
-      grid-row: 2;
       color: var(--primary-text-color);
       font-size: 2rem;
       font-weight: bold;
@@ -167,30 +151,29 @@
     }
 
     &--rate {
-      grid-column: 1/5;
-      grid-row: 3;
       color: var(--primary-text-color);
     }
 
     &--img {
       background: white;
-      text-align: center;
-      grid-column: 4/5;
-      grid-row: 1/2;
-      padding: 1.07143rem 0.35714rem 0.71429rem 0.35714rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      width: 3rem;
+      height: 3rem;
+      padding: 0.8rem;
       border-radius: 50%;
 
       &__icon {
-        width: 1rem;
-        font-size: 2rem;
-        height: 1rem;
+        width: 100%;
+        height: 100%;
         fill: var(--income-bg);
       }
     }
 
     &--pix {
-      grid-row: 4;
-      grid-column: 1/5;
       padding-top: 1rem;
 
       img {
@@ -200,22 +183,17 @@
   }
 
   &__expenses {
-    grid-column: 8/10;
-    grid-row: 2/4;
     padding: 2.14286rem 2.85714rem;
     background-color: var(--expenses-bg);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
+    position: relative;
 
     &--heading {
-      grid-column: 1/4;
       text-transform: uppercase;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
 
     &--numbers {
-      grid-column: 1/5;
-      grid-row: 2;
       color: var(--primary-text-color);
       font-size: 2rem;
       font-weight: bold;
@@ -223,29 +201,29 @@
     }
 
     &--rate {
-      grid-column: 1/5;
-      grid-row: 3;
       color: var(--primary-text-color);
     }
 
     &--img {
       background: white;
-      text-align: center;
-      grid-column: 4/5;
-      grid-row: 1/2;
-      padding: 1.07143rem 0.35714rem 0.71429rem 0.35714rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      width: 3rem;
+      height: 3rem;
+      padding: 0.8rem;
       border-radius: 50%;
 
       &__icon {
-        width: 1rem;
-        height: 1rem;
+        width: 100%;
+        height: 100%;
         fill: var(--expenses-bg);
       }
     }
 
     &--pix {
-      grid-row: 4;
-      grid-column: 1/5;
       padding-top: 1rem;
 
       img {
@@ -255,24 +233,17 @@
   }
 
   &__new-users {
-    grid-column: 11/13;
-    grid-row: 2/4;
     padding: 2.14286rem 2.85714rem;
-
     background-color: var(--new-users-bg);
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
+    position: relative;
 
     &--heading {
-      grid-column: 1/4;
       text-transform: uppercase;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
 
     &--numbers {
-      grid-column: 1/5;
-      grid-row: 2;
       color: var(--primary-text-color);
       font-size: 2rem;
       font-weight: bold;
@@ -280,30 +251,29 @@
     }
 
     &--rate {
-      grid-column: 1/5;
-      grid-row: 3;
       color: var(--primary-text-color);
     }
 
     &--img {
       background: white;
-      text-align: center;
-      grid-column: 4/5;
-      grid-row: 1/2;
-      padding: 1.07143rem 0.35714rem 0.71429rem 0.35714rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      width: 3rem;
+      height: 3rem;
+      padding: 0.9rem;
       border-radius: 50%;
 
       &__icon {
-        width: 1rem;
-        font-size: 2rem;
-        height: 1rem;
+        width: 100%;
+        height: 100%;
         fill: var(--new-users-bg);
       }
     }
 
     &--pix {
-      grid-row: 4;
-      grid-column: 1/5;
       padding-top: 1rem;
 
       img {
@@ -314,19 +284,34 @@
 }
 
 .summary {
-  margin: 1.42857rem;
   display: grid;
-  row-gap: 50px;
+  row-gap: 3.57143rem;
   grid-template-columns:
     1.42857rem repeat(2, 1fr) 1.42857rem repeat(2, 1fr)
     1.42857rem repeat(2, 1fr) 1.42857rem repeat(2, 1fr);
   grid-template-rows: 2.85714rem repeat(3, 1fr);
+  margin-right: 1.42857rem;
+
+  @media screen and (max-width: 54.375em) {
+    display: flex;
+    flex-direction: column;
+    margin: 1.42857rem 2.85714rem;
+  }
 
   &__revenue {
     grid-column: 2/7;
     grid-row: 1/5;
     padding: 0.71429rem 2.85714rem;
     background-color: var(--primary-text-color);
+
+    @media screen and (max-width: 56.25em) {
+      grid-column: 1/7;
+      margin-left: 1.42857rem;
+    }
+
+    @media screen and (max-width: 54.375em) {
+      margin-left: 0;
+    }
 
     &-title {
       margin-left: -2.85714rem;
@@ -347,6 +332,10 @@
         padding: 0.71429rem 1.42857rem;
         text-align: center;
         font-size: 1.2rem;
+
+        @media screen and (max-width: 56.25em) {
+          padding: 0.71429rem 0;
+        }
       }
 
       &--sales {
@@ -444,14 +433,21 @@
 // ACTIVITIES SECTION
 .activities {
   margin: 1.42857rem;
-  margin-left: 2.85714rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.42857rem;
 
+  @media screen and (max-width: 56.25em) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 2.85714rem;
+    margin-right: 2.85714rem;
+  }
+
+  @media screen and (max-width: 37.5em) {
+    grid-template-columns: 1fr;
+  }
   &__order1 {
     background-color: #fff;
-
     &-title {
       display: flex;
       align-items: center;
@@ -554,6 +550,10 @@
 
   &__order2 {
     background-color: #fff;
+    @media screen and (max-width: 56.25em) {
+      grid-column: 1/-1;
+    }
+
     &-title {
       display: flex;
       align-items: center;
@@ -565,10 +565,7 @@
     &-customer {
       display: grid;
       grid-template-columns: 1fr 3fr 2fr;
-      padding-left: 2.85714rem;
-      padding-right: 2.14286rem;
-      padding-top: 0.71429rem;
-      padding-bottom: 0.71429rem;
+      padding: 0.71429rem 2.14286rem 0.71429rem 2.85714rem;
       grid-gap: 1.42857rem;
       align-items: center;
       margin-top: 0.71429rem;
@@ -632,10 +629,15 @@
 
 .product {
   margin: 1.42857rem;
-  margin-left: 2.85714rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.42857rem;
+
+  @media screen and (max-width: 47.5em) {
+    grid-template-columns: 1fr;
+    margin-left: 2.85714rem;
+    margin-right: 2.85714rem;
+  }
 
   &-category {
     background-color: var(--primary-text-color);
@@ -689,7 +691,11 @@
 
 .sold-products {
   margin: 1.42857rem;
-  padding-left: 1.42857rem;
+
+  @media screen and (max-width: 47.5em) {
+    margin-left: 2.85714rem;
+    margin-right: 2.85714rem;
+  }
   &__title {
     background-color: var(--primary-text-color);
     display: flex;
@@ -738,7 +744,7 @@
     border-top: 0.07143rem solid var(--divider);
     border-right: 0.07143rem solid var(--divider);
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 37.5em) {
       display: flex;
       flex-direction: column;
     }
@@ -850,7 +856,7 @@
 }
 
 //MEDIA QUERY
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5em) {
   .sold-products__details-heading {
     display: none;
   }

@@ -7,6 +7,55 @@
     margin-bottom: 2.85714rem;
   }
 
+  &__export {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+    }
+    &-print {
+      background-color: var(--upgrade-button-color);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0.35714rem;
+
+      &--img {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        &__icon {
+          width: 100%;
+          height: 100%;
+          fill: white;
+        }
+      }
+      &--text {
+        color: var(--primary-text-color);
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__search {
+    margin: 1.42858rem 0px;
+    display: flex;
+    justify-content: flex-end;
+
+    [type="search"] {
+      padding: 0.71429rem;
+      border: 1px solid #ccc;
+      box-shadow: 0.21429rem 0.21429rem 0.71429rem 0.42857rem #ccc;
+
+      &:focus {
+        border: 1px solid #ddd;
+        outline: 0;
+      }
+    }
+  }
+
   &__details {
     margin-top: 2.85714rem;
     width: 100%;
@@ -46,6 +95,10 @@
   .users__details td {
     display: block;
     width: 100%;
+
+    [data-label="Email"] {
+      padding-left: 0;
+    }
   }
 
   .users__details tr {
