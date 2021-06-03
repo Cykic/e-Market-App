@@ -1,11 +1,14 @@
 import abstractView from "./abstractView.js";
 
 class singleProductView extends abstractView{ 
-  parentEl= document.querySelector('.singleProductView') 
- 
+  parentEl= document.querySelector('.single-productCategory') 
+  parentElContainer= document.querySelector('.section__six ')
+  curparentEl= document.querySelector('.second-productCategory')
   getHtml(){
     this.hideElement()
     this.showElement()
+    this.parentEl.classList.remove('hide')
+    this.curparentEl.classList.add('hide')
     return `
      <div class="about-product">
      <div class="about-product__img-side">

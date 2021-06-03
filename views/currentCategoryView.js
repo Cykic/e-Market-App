@@ -5,12 +5,12 @@ class currentCategoryView extends abstractView{
         super()
         
     } 
-    currentCategoryTitle =document.querySelector('.currentCategory')
-    
-  parentElContainer= document.querySelector('.section__fifth ')
-  
+  currentCategoryTitle =document.querySelector('.currentCategory')
   parentEl= document.querySelector('.second-productCategory')
+  singleparentEl= document.querySelector('.single-productCategory') 
  async getHtml(){
+  this.singleparentEl.classList.add('hide')
+  this.parentEl.classList.remove('hide')
      this.hideElement()
      this.showElement()
     this.currentCategoryTitle.innerHTML =this._data[0].category
@@ -22,8 +22,8 @@ class currentCategoryView extends abstractView{
      return ` 
      
      <div class="section__third__top-sales__container">
-     <a href="#${products._id}">
-          <div class="section__third__top-sales__container__img">
+     <a href="#${products._id}" >
+          <div class="section__third__top-sales__container__img"  id='currentCategory'>
        <img src="img/top-2.jfif" alt="T-shirt" class="imgs" />
      </div>
      <p class="discription">

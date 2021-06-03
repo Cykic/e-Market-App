@@ -13,7 +13,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>  <p class="renderError"></p>
+  <body>  <div class="renderError hide">
+        <p class="errorMessage"></p>
+        </div>
+  
     
     <p class="loginView"></p>
     
@@ -43,6 +46,7 @@
           <div class="nav__second-sec__product-login">
             <a data-view='registerView' class= "product register" id="registerView"> Register </a>
             <a class="product login" id="loginView"> Login </a>
+            <a class="product users login hide" id="userText">Welcome Busayo </a>
           </div>
 
           <div class="nav__second-sec__icon">
@@ -74,7 +78,7 @@
         </div>
 
         <!-- Second Sections (categories) -->
-        <p class="singleProductView hide"></p>
+      
         <div class="section__second">
           <h3 class="categories-header">Categories</h3>
           <div class="flex">
@@ -87,11 +91,11 @@
 
         <!-- Third Sections (Top Sales) -->
         <div class="section__third">
-          <div class="flex-wrap">
+          <div class="flex-wrap" >
             <h3 class="categories-header">Pants</h3>
             <button class="see-more">SEE MORE</button>
           </div>
-          <div class="section__third__top-sales flex-wrap">
+          <div class="section__third__top-sales flex-wrap" >
             <i class="fa fa-circle-o-notch loading-icon hide" aria-hidden="true"></i>
 
           </div>
@@ -99,7 +103,7 @@
                               
         <!-- Fourth Sections (Mens clothes) -->
         <div class="section__fourth">
-          <div class="flex-wrap">
+          <div class="flex-wrap" >
             <h3 class="categories-header">Shirts</h3>
             <button class="see-more">SEE MORE</button>
           </div>
@@ -123,7 +127,15 @@
         </div>
 
         <!-- eight Sections (leathers ) -->
+        <div class=" section__six section__fifth singleProduct hide">
+          <div class="flex-wrap">
 
+          </div>
+          <div class=" section__third__top-sales flex-wrap single-productCategory">
+            <i class="fa fa-circle-o-notch loading-icon hide" aria-hidden="true"></i>
+          
+          </div>
+        </div>
         
         <!-- footer part -->
         <div class="section__nineth">

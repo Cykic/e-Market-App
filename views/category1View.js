@@ -10,7 +10,7 @@ class category1View extends abstractView{
     generateMarkupPreview(products){   
      return ` 
      
-     <div class="section__third__top-sales__container">
+     <div class="section__third__top-sales__container" id='hi'>
      <a href="#${products._id}">
           <div class="section__third__top-sales__container__img">
        <img src="img/top-2.jfif" alt="T-shirt" class="imgs" />
@@ -21,7 +21,8 @@ class category1View extends abstractView{
      <p class="price">${cate1View.calculatePrice(products.price)}</p>
      <button class="btn add-to-cart">Add To Cart</button>
      </a>
-     </div>`
+     </div>
+     `
 
         
     }

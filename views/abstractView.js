@@ -4,18 +4,32 @@ export default class abstractView{
    }
     parentEl ;
    // = document.querySelector('.container')
-    err= document.querySelector('.renderError')
+    err= document.querySelector('.errorMessage')
+    errContainer= document.querySelector('.renderError')
     spinner= document.querySelectorAll('.loading-icon')
-    mainSection= document.querySelector('.section')
+    mainSection= document.querySelector('.container')
     container1=  document.querySelector('.section__third')
     container2 = document.querySelector('.section__fourth')
     overLay= document.querySelector('.overlay')
     loginView= document.querySelector('.loginView')
+    singlePage= document.querySelector('.section__six')
+    parentElContainer= document.querySelector('.section__fifth ')
     _data
     hideElement(){
       this.container1.classList.add('hide')
       this.container2.classList.add('hide')
   } 
+
+  defaultView(){
+    this.parentElContainer.classList.add('hide')
+      this.singlePage.classList.add('hide')
+      this.loginView.innerHTML=''
+      this.removeOverlay()
+     
+      this.container1.classList.remove('hide')
+      this.container2.classList.remove('hide')
+    
+  }
   showElement(){
     this.parentElContainer.classList.remove('hide')
   } 
@@ -60,6 +74,7 @@ export default class abstractView{
         document.body.style.backgroundImage = 'linear-gradient(  white, white)'
     }
     renderError(errMessage){
+        this.errContainer.classList.remove('hide')
         this.err.classList.remove('hide')
      this.err.innerHTML = errMessage
 

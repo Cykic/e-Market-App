@@ -1,6 +1,11 @@
 import abstractView from "./abstractView.js";
 
 class categoryView extends abstractView{ 
+  constructor(){
+    super()
+    // document.querySelector('.loginView').innerHTML=''
+    // this.removeOverlay()
+  }
   parentEl= document.querySelector('.flex') 
  // document.querySelector('.categories-header').innerHTML =this._data[0] 
  curCategoryViewHandler(handler){
