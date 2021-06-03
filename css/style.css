@@ -691,7 +691,7 @@ body {
   @media screen and (min-width: 50em) {
     .about-product {
       height: 100vh;
-      width: 80%;
+      width: 90%;
       grid-template-rows: repeat(18, 5%); } }
   .about-product__img-side {
     grid-column: 3 / 7;
