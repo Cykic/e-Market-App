@@ -1014,6 +1014,7 @@ body {
       }
       .registerFormContainer{
           width: 600px;
+          left: 340px;
       }
       .registerFormContainer input{
           width: 200px;
@@ -1127,14 +1128,15 @@ body {
            top: 3px;
            padding: 5px;
            border-radius: 5px;
-            left: 425px;
+            left: 400px;
             z-index: 100;
           background-color: rgb(224, 26, 26);
           font-size: 19px;
-          width: 480px;
+          width: 450px;
           text-align: center ;
           margin: 15px auto;  
       }
+      
       .passwordCheck{
           text-align: center;
           color: rgb(95, 78, 78);
@@ -1152,15 +1154,20 @@ body {
           /* margin: 10px auto; */
           left: 240px;
         }
+       
       }
       @media screen and (max-width:900px){
         .form-container{
-          width: 650px;
+          width: 450px;
           left: 150px;
         }
         .renderError{
-          /* left: 190px; */
+           left: 140px; 
           margin: 10px auto;
+        }
+        .registerFormContainer{
+          width: 550px;
+          left: 110px;
         }
       }
       

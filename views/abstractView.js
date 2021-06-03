@@ -32,6 +32,7 @@ export default class abstractView{
       this.singlePage.classList.add('hide')
       this.loginView.innerHTML=''
       this.removeOverlay()
+      this.clearError()
       this.container1.classList.remove('hide')
       this.container2.classList.remove('hide')
     
@@ -97,7 +98,7 @@ export default class abstractView{
 
     }
     clearError(){
-     this.err.classList.add('hide')
+     this.errContainer.classList.add('hide')
     }
     calculatePrice(price){
       let newPrice = (+price*410.50)

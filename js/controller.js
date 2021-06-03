@@ -18,7 +18,8 @@ function push(event, view){
 window.onload = event=>{
     window['registerView'].addEventListener('click', event=> push(event, registerView))
     window['loginView'].addEventListener('click', event=> push(event, loginView))
-    window['cartView'].addEventListener('click', event=> push(event, loginView))
+    window['cartView'].addEventListener('click', event=> { event.preventDefault()
+        push(event, loginView)})
    
 }
 window.addEventListener('popstate', event=> {
