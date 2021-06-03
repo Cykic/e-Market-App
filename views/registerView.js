@@ -2,11 +2,13 @@ import abstractView from './abstractView.js'
 import loginView from './loginView.js'
 import {API_URL} from '../js/config.js'
 import successfulMessage from './successfulMessage.js'
+
 class registerView extends abstractView{
     constructor(){
         super()
         this.clearError()
     }
+
     _password
     // togglePassword(input) {
     //   var x = document.querySelector();
@@ -19,6 +21,7 @@ class registerView extends abstractView{
     // }
     register = document.querySelector('.register')
     parentEl=document.querySelector('.loginView')
+    userText=document.querySelector('.user')
    
      ValidateEmail(input) {
       let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -104,12 +107,12 @@ class registerView extends abstractView{
             <input type="password"  name="" id="password2" class='registerPassword confirmPassword' title=' Must contain at least eight characters'>      
           </div>
     </div>
-            <div><i class="spinner fa fa-spinner hide" aria-hidden="true"></i><input class="submitRegister" type="submit" value="REGISTER"></div>
+            <div><input class="submitRegister" type="submit" value="REGISTER"></div>
             <div class="passwordCheck"> <p >Input Password must be 7 to 15 characters which contain at least one numeric digit and a special character</p></div>
             </form>
             <div class="account-div">
     
-            <p class="no-account-register"><a href="#login" data-link>Already have an account? Login</a> </p>
+            <p class="no-account-register">Already have an account? Login </p>
         </div>
     </div>
    `
@@ -121,7 +124,6 @@ removeRegistration(){
   this.parentEl.addEventListener('click', function(e){
     const btn= e.target.closest('.CancelRegister')
      if(!btn) return;
-     console.log(btn);
       register.removeOverlay()
         register.parentEl.innerHTML='' 
   })
@@ -150,7 +152,8 @@ removeRegistration(){
       register.Validatemobile(phoneNumber)
       register.CheckPassword(password)
       register.confirmPassword(password, confirmPassword)
-      data={name: fullName.value, email: email.value, password: password.value, Phone: phoneNumber.value}    
+      data={name: fullName.value, email: email.value, password: password.value, Phone: phoneNumber.value}
+      userText.innerHTML= fullName.split(' ')[0]    
        spinner.classList.remove('hide')
       getJSON(data)  
        }) 
@@ -201,7 +204,7 @@ this.parentEl.addEventListener('click', function(e){
           }
             catch(err){
               console.log(err);
-              register.renderError(err)
+              register.renderError('No internet connection')
             }
           }  
     const register= new registerView()

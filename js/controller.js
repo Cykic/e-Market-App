@@ -6,41 +6,31 @@ import category2View from '../views/category2View.js'
 import categoryView from '../views/categoryView.js'
 import currentCategoryView from '../views/currentCategoryView.js'
 import singleProductView from '../views/singleProductView.js'
-
-//Router logic
-function loadContent(id){
-    
-console.log('loading content for register'); 
-}
+import abstractView from '../views/abstractView.js'
+const abstract= new abstractView()
 function push(event, view){
-   let id= event.target.id;
-   // view= event.target.dataset.view
-    view.showViews()
-   document.title=id
-   
-   loadContent(id, view)
-   window.history.pushState({id}, `${id}`, `/page/${id}`)
+  let id= event.target.id; 
+  if(!view) return
+  view.showViews()
+   document.title=id 
+   window.history.pushState({id}, `${id}`, `/${id}`)
 }
-window.onload = (event)=>{
+window.onload = event=>{
     window['registerView'].addEventListener('click', event=> push(event, registerView))
-}
-// window.addEventListener('popstate', event=> {
-//     let stateId= event.state.id;
+    window['loginView'].addEventListener('click', event=> push(event, loginView))
+    window['cartView'].addEventListener('click', event=> push(event, loginView))
    
-//     loadContent(stateId)
-// })
+}
+window.addEventListener('popstate', event=> {
+   push(event, abstract.defaultView())
 
-
-
-
+})
 
 loginView.getInputValues()
-loginView.loginHandler()
-//registerView.registrationHandler()
 registerView.registerRedirect()
 loginView.loginRedirect()
 loginView.removeLogin()
-categoryView.renderSpinner()
+category1View.renderSpinner()
 async function registerHandler(){
     try{
         registerView.getInputValues()
@@ -52,7 +42,20 @@ async function registerHandler(){
 }
 registerHandler()
 
-
+async function controlCategoriesView(){
+    try{  
+      await model.getProducts()
+      await model.getCategories()
+        category1View.showViews(model.state.category1)
+        category1View.seeMoreHandler(model.state.category1All)
+        category2View.seeMoreHandler2(model.state.category2All)
+        category2View.showViews(model.state.category2)
+    }
+    catch(err){
+        console.log(err);
+        
+    }
+}  
 async function controlCategories(){
    
      try{
@@ -61,20 +64,11 @@ categoryView.showViews(model.state.categories)
  }
  catch(err){
      console.log(err);
+     categoryView.renderProductsError(err)
  }
 }
 
-async function controlCategoriesView(){
-    try{
-        
-        await model.getProducts()
-        category1View.showViews(model.state.category1)
-        category2View.showViews(model.state.category2)
-    }
-    catch(err){
-        console.log(err);
-    }
-}
+
 async function controlDisplayCategories(categoryName){
     if(!categoryName) return;
     model.displayCategories(categoryName)
@@ -88,20 +82,9 @@ async function controlSingleProducts(){
 }
 categoryView.curCategoryViewHandler(controlDisplayCategories)
 
-
-async function controlSingleProduct(){
-    try{
-        const id = window.location.hash.slice(1) 
-      if(!id) return
-       await model.getSingleProduct(id)
-    }
-    catch(err){
-        console.log(err);
-    }
-}
-
- window.addEventListener('load', controlCategories)
  window.addEventListener('load', controlCategoriesView)
+ 
+ window.addEventListener('load', controlCategories)
 
- window.addEventListener('hashchange', controlSingleProduct)
-// window.addEventListener('hashchange', controlSingleProduct)
+ window.addEventListener('hashchange', controlSingleProducts)
+

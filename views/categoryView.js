@@ -1,6 +1,11 @@
 import abstractView from "./abstractView.js";
 
 class categoryView extends abstractView{ 
+  constructor(){
+    super()
+    // document.querySelector('.loginView').innerHTML=''
+    // this.removeOverlay()
+  }
   parentEl= document.querySelector('.flex') 
  // document.querySelector('.categories-header').innerHTML =this._data[0] 
  curCategoryViewHandler(handler){
@@ -18,16 +23,16 @@ class categoryView extends abstractView{
     generateMarkupPreview(results){
      return `
      
-     <div data-category='${results}' class="section__second__categories >
-     <a href="">
-     <img
-           src="img/mans-clothes.jfif"
-           alt="Men Clothes"
-           class="categories-img"
-         />
-         <h3 class="categories-name">${results}</h3>
-         </a>
-       </div>
+    
+            <div data-category='${results}' class="section__second__categories">
+            
+
+              <div class="section__second__categories__icon">
+                <i class="fa fa-child"></i>
+              </div>
+
+              <h3 class="categories-name">${results}</h3>
+            </div>
        `    
     }
 

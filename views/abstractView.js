@@ -1,21 +1,52 @@
 import {API_URL} from '../js/config.js';
 export default class abstractView{
    constructor(){
+   //  this.clearProductsError()
    }
     parentEl ;
    // = document.querySelector('.container')
-    err= document.querySelector('.renderError')
+    err= document.querySelector('.errorMessage')
+    productsError=document.querySelector('.productsError')
+    errContainer= document.querySelector('.renderError')
     spinner= document.querySelectorAll('.loading-icon')
-    mainSection= document.querySelector('.section')
+    mainSection= document.querySelector('.container')
+    sectionSecond = document.querySelector('.secondSection')
     container1=  document.querySelector('.section__third')
     container2 = document.querySelector('.section__fourth')
     overLay= document.querySelector('.overlay')
     loginView= document.querySelector('.loginView')
+    singlePage= document.querySelector('.section__six')
+    parentElContainer= document.querySelector('.section__fifth ')
+    seeMore= document.querySelector('.see-more')
+    seeMore2= document.querySelector('.see-more2')
+   mainContainer= document.querySelector('.main')
     _data
     hideElement(){
       this.container1.classList.add('hide')
       this.container2.classList.add('hide')
   } 
+
+  defaultView(){
+    this.sectionSecond.classList.remove('hide')
+    this.parentElContainer.classList.add('hide')
+      this.singlePage.classList.add('hide')
+      this.loginView.innerHTML=''
+      this.removeOverlay()
+      this.container1.classList.remove('hide')
+      this.container2.classList.remove('hide')
+    
+  }
+  renderProductsError(err){
+    this.hideElement()
+    this.sectionSecond.classList.add('hide')
+    this.productsError.innerHTML= err
+  }
+  clearProductsError(){
+    this.sectionSecond.classList.remove('hide')
+    this.container1.classList.remove('hide')
+    this.container2.classList.remove('hide')
+    this.productsError.innerHTML= ''
+  }
   showElement(){
     this.parentElContainer.classList.remove('hide')
   } 
@@ -60,6 +91,7 @@ export default class abstractView{
         document.body.style.backgroundImage = 'linear-gradient(  white, white)'
     }
     renderError(errMessage){
+        this.errContainer.classList.remove('hide')
         this.err.classList.remove('hide')
      this.err.innerHTML = errMessage
 
@@ -81,7 +113,12 @@ export default class abstractView{
    [...this.spinner].forEach(el=>el.classList.remove('hide'))
  }
 
-
+ seeMoreHandler(data){
+  this.seeMore.addEventListener('click', ()=>this.showViews(data))
+}
+seeMoreHandler2(data){
+  this.seeMore2.addEventListener('click', ()=>this.showViews(data))
+}
 
 starRating = str => {
  let roundHalf = num => {

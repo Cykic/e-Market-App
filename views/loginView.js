@@ -6,6 +6,7 @@ class loginView extends abstractView{
 login = document.querySelector('.login') 
 parentEl=document.querySelector('.loginView')
 spinner= document.getElementsByClassName('spinner')
+userText=document.querySelector('.user')
     constructor(){
         super()
 this.generateMarkup()
@@ -27,10 +28,10 @@ this.clearError()
         <div><label for="password">Password</label><br>
             <input type="password" name="" id="password" class='password'>
         </div>
-        <div> <i class="spinner fa fa-spinner hidden" aria-hidden="true"></i><input class="submit" id='Submit' type="submit" value="LOG IN"></div>
+        <div><input class="submit" id='Submit' type="submit" value="LOG IN"></div>
     </form>
     <div class="account-div">
-    <p class="login-no-account"><a href="#registration" data-link >Don't have an account? Register</a> </p>
+    <p class="login-no-account">Don't have an account? Register</p>
     </div>
     </div>
     <!-- this is the bottom link -->
@@ -51,29 +52,28 @@ this.clearError()
       return this.generateMarkup()
     }
    
-    loginHandler(){
+    // loginHandler(){
      
-    this.login.addEventListener('click', this.showViews.bind(this))
-    }
+    // this.login.addEventListener('click', this.showViews.bind(this))
+    // }
 
     getInputValues(){
         let data
         let email;
-       let spinner
+       
         let password;  
          this.parentEl.addEventListener('submit', function(e){
           LoginView.clearError()
          
          e.preventDefault()
-         spinner= document.querySelector('.spinner')
-         spinner.classList.remove('hidden')
+        
          email =document.querySelector('.Email')
          password=document.querySelector('.password')
         if(!email && !password) return;
         data={Email:email.value, Password: password.value}
        
           getLoginJSON(data)
-          spinner.classList.add('hidden')
+  
          
            })
      
@@ -116,10 +116,15 @@ async function getLoginJSON (data){
              if(res.status==500){
                throw new Error('Please input your details')
              }
+             if(res.status==200){
+              LoginView.removeOverlay()
+              LoginView.parentEl.innerHTML='' 
+              LoginView.userText.classList.remove('hide')
+             }
           }
             catch(err){
               console.log(err);
-              LoginView.renderError(err)
+              LoginView.renderError('No internet connection')
             }
    }
 const LoginView = new loginView()
