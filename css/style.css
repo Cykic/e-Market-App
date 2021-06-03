@@ -63,6 +63,7 @@ body {
   font-size: 1.4rem;
   margin-right: 2rem;
   cursor: pointer;
+  padding: 0 .8rem;
   transition: all .2s; }
   @media screen and (min-width: 43.8em) {
     .see-more {
@@ -134,13 +135,11 @@ body {
   border: 2px solid var(--color-primary);
   color: var(--color-primary); }
 
-.fa-star-o {
+.fa-star-o,
+.fa-star {
+  width: min-content;
   padding: 0;
-  background-color: var(--color-tetiary);
-  background-clip: text;
-  -webkit-background-clip: text;
-  display: inline-block;
-  color: transparent; }
+  color: var(--color-tetiary); }
 
 .fa-search {
   color: var(--color-primary);
@@ -384,11 +383,13 @@ body {
   color: --color-black; }
 
 .brand {
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   display: block; }
   .brand__title {
-    font-size: 2rem;
-    font-weight: 500; }
+    font-size: 2.05rem;
+    font-weight: 600; }
+  .brand__name {
+    font-size: 2rem; }
 
 .product-price {
   font-size: 3.5rem;
@@ -396,7 +397,7 @@ body {
   font-weight: 600; }
 
 .shipping {
-  font-size: 2rem;
+  font-size: 2.4rem;
   display: block;
   color: var(--color-tetiary); }
 
@@ -423,6 +424,13 @@ body {
   text-transform: uppercase;
   display: inline-block;
   color: rgba(148, 144, 144, 0.904); }
+
+.numberOfPeopleRated {
+  margin-left: 3rem;
+  color: var(--color-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  font: 2rem; }
 
 .section {
   margin-top: 8rem;
@@ -623,6 +631,7 @@ body {
   --color-secondary: #041e42;
   --color-tetiary: #ffc220;
   --color-black: #000000;
+  --color-blue: #0071DC;
   --text-color-primary: #000;
   --text-color-secondary: #F5F5F5;
   --text-color-tetiary: #FCED70; }
@@ -682,27 +691,26 @@ body {
   grid-gap: 1.5rem;
   padding: 1rem;
   margin: auto;
-  position: relative;
   height: 80vh; }
   @media screen and (min-width: 33em) {
     .about-product {
-      width: 45%;
+      width: 90%;
       margin: auto; } }
   @media screen and (min-width: 50em) {
     .about-product {
-      height: 100vh;
-      width: 90%;
-      grid-template-rows: repeat(18, 5%); } }
+      height: 65vh;
+      width: 70%;
+      grid-template-rows: repeat(14, 5%); } }
   .about-product__img-side {
     grid-column: 3 / 7;
     display: block;
     position: relative;
     overflow: hidden;
-    border-radius: .7rem;
+    border-radius: 0.7rem;
     background-color: var(--color-primary); }
     @media screen and (min-width: 50em) {
       .about-product__img-side {
-        grid-column: 1 / 5;
+        grid-column: 1 / 4;
         grid-row: 2/15; } }
   .about-product__discription {
     grid-row: 2;
@@ -713,8 +721,8 @@ body {
     line-height: 3rem; }
     @media screen and (min-width: 50em) {
       .about-product__discription {
-        grid-column: 5 / 9;
-        grid-row: 2/14; } }
+        grid-column: 4 / 9;
+        grid-row: 2/13; } }
     .about-product__discription__official {
       display: inline-block;
       font-size: 1.8rem;
@@ -730,24 +738,36 @@ body {
       height: 80%;
       margin-top: 3%; }
       .about-product__discription__product__rating {
-        height: 20%;
-        padding: -10%; }
+        height: min-content; }
   .about-product__add {
     grid-column: 1 / 9;
     grid-row: 3;
-    background-color: var(--color-primary); }
+    background-color: transparent; }
     @media screen and (min-width: 50em) {
       .about-product__add {
-        grid-column: 5 / 9;
-        grid-row: 14; } }
+        grid-column: 4/9;
+        grid-row: 13 / 15;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center; } }
     .about-product__add__btn {
       width: 100%;
       height: 100%;
-      background-color: var(--color-tetiary);
+      background-color: var(--color-secondary);
       border: none;
       outline: none;
-      font-size: 2.3rem;
-      text-align: center; }
+      font-size: 2rem;
+      border-radius: 4rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s; }
+      @media screen and (min-width: 50em) {
+        .about-product__add__btn {
+          height: 80%; }
+          .about-product__add__btn:hover {
+            background-color: var(--color-blue); } }
 
 .user {
   width: 100%; }
