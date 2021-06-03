@@ -3,7 +3,7 @@ import abstractView from "./abstractView.js";
 class currentCategoryView extends abstractView{ 
     constructor(){
         super()
-        
+   
     } 
   currentCategoryTitle =document.querySelector('.currentCategory')
   parentEl= document.querySelector('.second-productCategory')

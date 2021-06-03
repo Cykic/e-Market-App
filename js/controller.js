@@ -18,6 +18,7 @@ function push(event, view){
 window.onload = event=>{
     window['registerView'].addEventListener('click', event=> push(event, registerView))
     window['loginView'].addEventListener('click', event=> push(event, loginView))
+    window['cartView'].addEventListener('click', event=> push(event, loginView))
    
 }
 window.addEventListener('popstate', event=> {
@@ -44,11 +45,15 @@ registerHandler()
 async function controlCategoriesView(){
     try{  
       await model.getProducts()
+      await model.getCategories()
         category1View.showViews(model.state.category1)
+        category1View.seeMoreHandler(model.state.category1All)
+        category2View.seeMoreHandler2(model.state.category2All)
         category2View.showViews(model.state.category2)
     }
     catch(err){
         console.log(err);
+        
     }
 }  
 async function controlCategories(){
@@ -59,6 +64,7 @@ categoryView.showViews(model.state.categories)
  }
  catch(err){
      console.log(err);
+     categoryView.renderProductsError(err)
  }
 }
 
