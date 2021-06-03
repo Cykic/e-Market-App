@@ -7,6 +7,8 @@ import categoryView from '../views/categoryView.js'
 import currentCategoryView from '../views/currentCategoryView.js'
 import singleProductView from '../views/singleProductView.js'
 import abstractView from '../views/abstractView.js'
+import cartView from '../views/cartView.js'
+
 const abstract= new abstractView()
 function push(event, view){
   let id= event.target.id; 
@@ -15,10 +17,11 @@ function push(event, view){
    document.title=id 
    window.history.pushState({id}, `${id}`, `/${id}`)
 }
+
 window.onload = event=>{
     window['registerView'].addEventListener('click', event=> push(event, registerView))
     window['loginView'].addEventListener('click', event=> push(event, loginView))
-    window['cartView'].addEventListener('click', event=> push(event, loginView))
+    window['cartView'].addEventListener('click', event=> push(event, cartView))
    
 }
 window.addEventListener('popstate', event=> {
