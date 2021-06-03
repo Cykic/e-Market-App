@@ -1,10 +1,10 @@
-import { spinner } from "./helper.js";
+import { spinner, warning } from "./helper.js";
 
 export class Cart {
   cart = [];
   products = [];
   constructor() {
-
+    this.getAllProducts();
   }
   cartContainer = document.querySelector(".cart-container");
   totalLabel = document.querySelector("#total-amount");
@@ -14,7 +14,6 @@ export class Cart {
   cartCount = document.querySelector("#cart-count");
   checkoutbtn = document.querySelector(".checkout-btn");
   subTotalCount = document.querySelector(".subtotal-count");
-  
 
   conversionRate = 410.93;
   totalAmt;
@@ -22,22 +21,18 @@ export class Cart {
   async getAllProducts() {
     try {
       // Hit API Endpoint
-      spinner(true)
+      spinner(true);
       const res = await fetch(
         "https://shopappanter.herokuapp.com/api/products"
       );
-      spinner(false)
+      spinner(false);
       if (!res.ok) throw new Error("Request failed");
 
       const data = await res.json();
       this.products = data.products;
-
-      console.log(data);
+      this.products.forEach((prd) => (prd["quantity"] = 1));
+      // console.log(data);
       console.log(this.products);
-
-      // Create new Product Object
-
-      // Add project object to array
     } catch (error) {
       console.log("An Error is", error);
     }
@@ -48,6 +43,9 @@ export class Cart {
     const foundItem = this.findProduct(productid);
     // ADD to cart
     this.cart.push(foundItem);
+    this.updateLocalStorage()
+    this._updateCart()
+
     console.log(this.cart);
   }
 
@@ -56,6 +54,8 @@ export class Cart {
     console.log(foundItem);
     const productIndex = this.cart.findIndex((prd) => prd === foundItem);
     this.cart.splice(productIndex, 1);
+    this.updateLocalStorage()
+    warning(`${foundItem.name} was removed`)
     console.log(this.cart);
   }
 
@@ -75,8 +75,16 @@ export class Cart {
     return this.products.find((prd) => prd["_id"] === id);
   }
 
-  _updateCart() {
+  async _updateCart() {
     this._clear();
+    await this.getAllProducts()
+    if(this.cart.length === 0){
+      this.renderEmptyCart()
+      this.total()
+      this._labelChanges()
+      return
+    }
+    this.retrievefromLocalStorage();
     this.cart.forEach((item) => {
       const html = `
       <div class="body-flex">
@@ -96,25 +104,19 @@ export class Cart {
     
       <!-- quantity -->
       <div class="prd-qty-container">
-        <p class="prd-quantity">Qty:</p>
-        <select name="" id="qty">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-       <div class="prd-footer">
+      <span>-</span>
+      <p class="prd-quantity">Quantity:${item.quantity}</p>
+      <div class="plus">+</div>
+        
+        <div class="prd-footer">
         <p class="prd-remove" data-id = ${item["_id"]}>Remove</p>
-        <p>|</p>
-        <p class="prd-save">Save for later</p>
-       </div>
+        </div>
       </div>
       
       `;
 
       this.cartContainer.insertAdjacentHTML("afterbegin", html);
-      this.cartContainer.classList.remove("hide")
+      this.cartContainer.classList.remove("hide");
     });
 
     const prdRemoveBtn = document.querySelectorAll(".prd-remove");
@@ -127,7 +129,6 @@ export class Cart {
     this._labelChanges();
 
     // LOCAL STORAGE
-    localStorage.setItem("cart", JSON.stringify(this.cart));
   }
 
   _clear() {
@@ -135,8 +136,8 @@ export class Cart {
   }
 
   removeHandler(btn) {
-    this.removefromCart(btn.dataset.id);
     this._updateCart();
+    this.removefromCart(btn.dataset.id);
   }
 
   _clearCart() {
@@ -157,5 +158,28 @@ export class Cart {
     this.subTotalCount.textContent = `(${this.cart.length} ${
       this.cart.length > 1 ? "Items" : "Item"
     })`;
+  }
+
+  retrievefromLocalStorage() {
+    
+    const JSONCart = JSON.parse(localStorage.getItem("cart"));
+    if(JSONCart) this.cart = JSONCart
+    console.log(this.cart);
+  }
+
+  updateLocalStorage(){
+    localStorage.setItem("cart", JSON.stringify(this.cart));
+  }
+
+  renderEmptyCart(){
+    const html =`
+    <div class="empty-cart">
+      Your Cart is Empty
+    </div>
+    `
+    this.cartContainer.insertAdjacentHTML("afterbegin", html);
+    this.cartContainer.classList.remove("hide")
+    console.log("Your Cart is Empty");
+
   }
 }

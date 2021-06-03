@@ -2,16 +2,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="css/cart.css" />
     <script type="module" defer src="/js/app.js"></script>
     <script defer src="https://checkout.flutterwave.com/v3.js"></script>
 
     <title>Document</title>
   </head>
-  <body>
-
-    <p id="cart-count">Your Cart: 1 Item</p> 
-    
+<body>
+<button id="test" data-id="60b4f6f53bdc021804b33d0c"> Add to cart</button>
+<button id="test" data-id="60b4f6f53bdc021804b33d0e"> Add to cart</button>
+    <p id="cart-count">Your Cart: 0 Item</p> 
     <div class="cart-container hide">
       <div class="body-flex">
         <!-- PRODUCT -->
@@ -40,8 +40,7 @@
         </select>
        <div class="prd-footer">
         <p class="prd-remove">Remove</p>
-        <p>|</p>
-        <p class="prd-save">Save for later</p>
+        
        </div>
       </div>
     </div>
@@ -81,10 +80,7 @@
       <button class="checkout-btn">Checkout(0)</span></button>
     </div>
   </div>
-<!-- WARNING -->
-  <div class="warning hide">Add Item to Cart to Checkout</div>
-
- 
-
-  </body>
+  <!-- WARNING -->
+   <div class="warning hide">Add Item to Cart to Checkout</div>
+</body>
 </html>
