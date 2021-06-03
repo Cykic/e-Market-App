@@ -3,9 +3,7 @@ import { spinner } from "./helper.js";
 export class Cart {
   cart = [];
   products = [];
-  constructor() {
-
-  }
+  constructor() {}
   cartContainer = document.querySelector(".cart-container");
   totalLabel = document.querySelector("#total-amount");
   subTotalLabel = document.querySelector("#sub-total");
@@ -14,7 +12,6 @@ export class Cart {
   cartCount = document.querySelector("#cart-count");
   checkoutbtn = document.querySelector(".checkout-btn");
   subTotalCount = document.querySelector(".subtotal-count");
-  
 
   conversionRate = 410.93;
   totalAmt;
@@ -22,16 +19,16 @@ export class Cart {
   async getAllProducts() {
     try {
       // Hit API Endpoint
-      spinner(true)
+      spinner(true);
       const res = await fetch(
         "https://shopappanter.herokuapp.com/api/products"
       );
-      spinner(false)
+      spinner(false);
       if (!res.ok) throw new Error("Request failed");
 
       const data = await res.json();
       this.products = data.products;
-
+      this.products.forEach((prd) => (prd["quantity"] = 1));
       console.log(data);
       console.log(this.products);
 
@@ -96,25 +93,19 @@ export class Cart {
     
       <!-- quantity -->
       <div class="prd-qty-container">
-        <p class="prd-quantity">Qty:</p>
-        <select name="" id="qty">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-       <div class="prd-footer">
+      <span>-</span>
+      <p class="prd-quantity">Quantity:${item.quantity}</p>
+      <div class="plus">+</div>
+        
+        <div class="prd-footer">
         <p class="prd-remove" data-id = ${item["_id"]}>Remove</p>
-        <p>|</p>
-        <p class="prd-save">Save for later</p>
-       </div>
+        </div>
       </div>
       
       `;
 
       this.cartContainer.insertAdjacentHTML("afterbegin", html);
-      this.cartContainer.classList.remove("hide")
+      this.cartContainer.classList.remove("hide");
     });
 
     const prdRemoveBtn = document.querySelectorAll(".prd-remove");
@@ -158,4 +149,6 @@ export class Cart {
       this.cart.length > 1 ? "Items" : "Item"
     })`;
   }
+
+  quantity() {}
 }
