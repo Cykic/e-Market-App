@@ -1,5 +1,5 @@
 
-export  const CartView =()=>`
+export const CartView =()=>`
         <body>
             <button id="test" data-id="60b4f6f53bdc021804b33d0c"> Add to cart</button>
             <button id="test" data-id="60b4f6f53bdc021804b33d0e"> Add to cart</button>
