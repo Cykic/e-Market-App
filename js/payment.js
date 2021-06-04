@@ -44,7 +44,7 @@ export class Payment {
         customizations: {
           title: "Rexha",
           description: "Payment for item(s) in cart",
-          logo: "https://assets.piedpiper.com/logo.png",
+          logo: "https://drive.google.com/file/d/178te7d6ws3h6yY8bnCvRfQvdbnASOB6o/view?usp=sharing",
         },
       });
     } catch (err) {
