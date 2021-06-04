@@ -1,8 +1,9 @@
 export function warning(message) {
   const warning = document.querySelector(".warning");
   warning.textContent = message;
-  warning.classList.toggle("hide");
-  setTimeout(() => warning.classList.toggle("hide"), 1500);
+  setTimeout(() => warning.classList.toggle("hide"), 2000);
+  setTimeout(() => warning.classList.toggle("hide"),500);
+  
 }
 // ADDED ALERT
 export function addedAlert() {
