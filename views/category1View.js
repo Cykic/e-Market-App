@@ -19,7 +19,7 @@ class category1View extends abstractView{
        <b>${products.name}</b>
      </p>
      <p class="price">${cate1View.calculatePrice(products.price)}</p>
-     <button class="btn add-to-cart">Add To Cart</button>
+     <button data-id="${products._id}"class="btn add-to-cart">Add To Cart</button>
      </a>
      </div>
      `   

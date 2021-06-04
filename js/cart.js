@@ -11,7 +11,7 @@ export class Cart {
   subTotalLabel = document.querySelector("#sub-total");
   deliveryLabel = document.querySelector("#delivery");
   deliveryLabel = document.querySelector("#delivery");
-  cartCount = document.querySelector("#cart-count");
+  cartCount = document.querySelector(".cart-number");
   checkoutbtn = document.querySelector(".checkout-btn");
   subTotalCount = document.querySelector(".subtotal-count");
 
@@ -153,7 +153,7 @@ export class Cart {
   }
 
   _labelChanges() {
-    this.cartCount.textContent = `Your Cart: ${this.cart.length} Item (s)`;
+    this.cartCount.textContent = `${this.cart.length}`;
     this.checkoutbtn.textContent = `Checkout (${this.cart.length})`;
     this.subTotalCount.textContent = `(${this.cart.length} ${
       this.cart.length > 1 ? "Items" : "Item"
