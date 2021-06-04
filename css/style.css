@@ -851,7 +851,7 @@ body {
       
       .form-container{
          position: absolute;
-         top: 60px;
+         top: 90px;
          left: 400px;
          z-index: 100;
           background-color: #041E42;
@@ -991,12 +991,7 @@ body {
           color: white;
           background-color:  #FFC220;
       }
-      .save:hover{
-          background-color: orangered;
-      }
-      #changePassword:hover{
-          background-color: orangered;
-      }
+     
       .radioButtons{
           color: white;
           width: 400px;
@@ -1014,10 +1009,14 @@ body {
       }
       .registerFormContainer{
           width: 600px;
+          left: 340px;
       }
       .registerFormContainer input{
           width: 200px;
          
+      }
+      .registerFormContainer .form-head{
+        margin-top: -50px;
       }
       input:focus{
           outline: none;
@@ -1027,7 +1026,7 @@ body {
           grid-template-columns: repeat(2, 260px);
       }
       .form-container .submit, .form-container .submitRegister{
-          width: 280px;
+          width: 240px;
           color: white;
           border-top-left-radius: 0.8rem;
           margin: 20px auto;
@@ -1039,12 +1038,23 @@ body {
           height: 50px;
           font-weight: bold;
       }
-      .submit:hover{
-          background-color: #dfa609;
+      .form-container .submit{
+        margin-left: -35px;
       }
-      .submitRegister:hover{
-          background-color: #dfa609;
+    
+      .submit:active{
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
       }
+      .Cancel:active{
+        box-shadow: 0 5px #666;
+        transform: translateY(4px); 
+      }
+      .submitRegister:active{
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+    
       .successMessage{
           text-align: center;
           font-size: 20px;
@@ -1061,6 +1071,10 @@ body {
          left: 70px;
          color: #041E42;
           animation: rotate 2s infinite linear;
+        }
+        .CancelRegister:active{
+          box-shadow: 0 2px #666;
+          transform: translateY(4px); 
         }
       
         @keyframes rotate {
@@ -1121,24 +1135,32 @@ body {
        }
        .errorMessage{
          color: white;
+         font-size: 16px;
+       }
+       .fa-exclamation-triangle{
+         font-size: 20px;
        }
        .renderError{
            position: absolute;
-           top: 3px;
+          color: #FFFFFF;
            padding: 5px;
            border-radius: 5px;
-            left: 425px;
+            left: 400px;
             z-index: 100;
-          background-color: rgb(224, 26, 26);
+          background-color: rgb(197, 40, 40);
           font-size: 19px;
-          width: 480px;
+          width: 450px;
           text-align: center ;
           margin: 15px auto;  
       }
+      
       .passwordCheck{
-          text-align: center;
+          text-align: center; 
           color: rgb(95, 78, 78);
           margin:-20px auto 30px auto;
+      }
+      .passwordCheck p{
+        font-size: 15px;
       }
       .showPassword{
           position: relative;
@@ -1149,18 +1171,23 @@ body {
           left: 160px;
         }
         .renderError{
-          /* margin: 10px auto; */
+        
           left: 240px;
         }
+       
       }
       @media screen and (max-width:900px){
         .form-container{
-          width: 650px;
+          width: 450px;
           left: 150px;
         }
         .renderError{
-          /* left: 190px; */
+           left: 140px; 
           margin: 10px auto;
+        }
+        .registerFormContainer{
+          width: 550px;
+          left: 110px;
         }
       }
       
@@ -1175,6 +1202,7 @@ body {
            }
            .renderError{
              top: 2px;
+             font-size: 14px;
              width: 300px;
              left: 80px;
            }
