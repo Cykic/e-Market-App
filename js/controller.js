@@ -8,7 +8,7 @@ import currentCategoryView from '../views/currentCategoryView.js'
 import singleProductView from '../views/singleProductView.js'
 import {users} from '../views/loginView.js'
 import abstractView from '../views/abstractView.js'
-import { getAddToCartButtons } from './app.js'
+import { getAddToCartButtons } from '../js/app.js'
 const abstract= new abstractView()
 function push(event, view){
   let id= event.target.id; 
@@ -21,8 +21,7 @@ function push(event, view){
 window.onload = event=>{
     window['registerView'].addEventListener('click', event=> push(event, registerView))
     window['loginView'].addEventListener('click', event=> push(event, loginView))
-    window['cartView'].addEventListener('click', event=> { event.preventDefault()
-        push(event, loginView)})
+   
 }
 
 window.onload = (event) => {
@@ -37,8 +36,6 @@ window.onload = (event) => {
 window.addEventListener("popstate", (event) => {
   push(event, abstract.defaultView());
 });
-
-
 
 registerView.registerRedirect()
 loginView.loginRedirect()
@@ -62,7 +59,8 @@ async function loginHandler(){
         loginView.removeLogin()
     }
   catch(err){
-    registerView.renderError(err)
+    console.log(err);
+    //loginView.renderError(err)
   }
 }
 
@@ -80,22 +78,14 @@ async function controlCategoriesView(){
         categoryView.renderProductsError('No internet connection detected. check your network connection or reload the page')
         
     }
-}  
-// async function controlCategories(){
-   
-//      try{
-// await model.getCategories()
-// categoryView.showViews(model.state.categories)
-//  }
-//  catch(err){
-//      console.log(err);
-//      categoryView.renderProductsError(err)
-//  }
-
-
-// }
+} 
 registerHandler();
-
+async function getUsers(){
+  const getJSON= await fetch('https://shopappanter.herokuapp.com/api/users')
+  const data= await getJSON.json()
+  console.log(data);
+}
+ getUsers()
 
 async function controlCategories() {
   try {
@@ -103,7 +93,7 @@ async function controlCategories() {
     categoryView.showViews(model.state.categories);
     } catch (err) {
     console.log(err);
-    categoryView.renderProductsError(err);
+    categoryView.renderProductsError('No internet connection');
   }
 }
 
@@ -113,25 +103,24 @@ async function controlDisplayCategories(categoryName) {
   currentCategoryView.showViews(model.state.currentCategory);
   
 }
-async function controlSingleProducts() {
-  const id = window.location.hash.slice(1);
-  if (!id) return;
+
+async function controlSingleProducts(id) {
+  
   await model.getSingleProduct(id);
   singleProductView.showViews(model.state.singleProduct);
   
 }
+ category1View.singleProductHandler(controlSingleProducts)
+ category2View.singleProductHandler(controlSingleProducts)
+ currentCategoryView.singleProductHandler(controlSingleProducts)
 categoryView.curCategoryViewHandler(controlDisplayCategories);
 
 window.addEventListener("load", controlCategoriesView);
 
 window.addEventListener("load", controlCategories);
 
-window.addEventListener("hashchange", controlSingleProducts);
-
-
-
- window.addEventListener('hashchange', controlSingleProducts)
-// console.log(users);
- registerHandler()
+console.log(users);
+ //registerHandler()
  getAddToCartButtons()
 
+ getUsers(users.token)

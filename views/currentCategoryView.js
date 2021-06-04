@@ -21,7 +21,7 @@ class currentCategoryView extends abstractView{
         
      return ` 
      
-     <div class="section__third__top-sales__container">
+     <div data-id='${products._id}' class="section__third__top-sales__container">
      <a href="#${products._id}" >
           <div class="section__third__top-sales__container__img"  id='currentCategory'>
        <img src="img/top-2.jfif" alt="T-shirt" class="imgs" />
@@ -36,6 +36,7 @@ class currentCategoryView extends abstractView{
   `
         
     }
+ 
 }
 export default new currentCategoryView()
 const currentCategory= new currentCategoryView()

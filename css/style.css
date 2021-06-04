@@ -836,432 +836,428 @@ body {
 
 
 
-      a{
-        text-decoration: none;
-        color: inherit;
-      }
-      .fa-circle-o-notch{
-        color: #ffc220;
-        text-align: center;
-        animation: rotate 2s infinite linear;
-      
-      }
-     
-      .flex .fa-circle-o-notch{
-        font-size: 30px;
-        margin: 40px ;
-      }
-      .section__third__top-sales .fa-circle-o-notch{
-        width: 20px;
-        margin: 40px auto;
-        font-size: 50px;
-      }
-      
-      .form-container{
-         position: absolute;
-         top: 90px;
-         left: 400px;
-         z-index: 100;
-          background-color: #041E42;
-          border-top-left-radius: 1.25rem;
-          border-top-right-radius: 1.25rem;
-          border-bottom-right-radius: 1.25rem;
-          width: 450px;
-          margin: 0px auto;
-      }
-      .form-head{
-          text-align: center;
-          padding: 3px;
-          margin-bottom: -30px;
-      }
-      .productsError{
-         position: absolute;
-        left: 50%; 
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 400px;
-        font-size: 20px;
-        color: rgb(214, 12, 12);
-        text-align: center;
-      }
-      .form-head h3{
-          margin-top: 40px;
-          font-weight: 600;
-          line-height: 36px;
-          font-size: 24px;
-          margin-bottom: 34px;
-          color: #FFC220;
-      }
-      .fa-star-half-o, .fa-star{
-        color: #ffc220;
-      }
-      
-      .form-input{
-         padding: 30px;
-          display: flex;
-          flex-direction: column;
-      }
-      .form-input div{
-          font-weight: 600;
-          line-height: 24px;
-          color: white;
-          font-size: 12.5px;
-          margin: 10px auto;
-      }
-      .personalDataDiv{
-          background-color: #041E42;
-          margin: 20px auto;
-          width: 500px;
-          padding: 5px;
-          border-top-left-radius: 1.25rem;
-          border-top-right-radius: 1.25rem;
-          border-bottom-right-radius: 1.25rem;
-      }
-      .personalDataDiv h2{
-          text-align: center;
-          line-height: 100px;
-          height: 100px;
-          font-size: 18px;
-          margin-top: -5px;
-          border-radius: 1.25rem;
-          color: white;
-       
-      }
-      .userIdentity{
-          display: flex;
-          flex-direction: column;
-      }
-      .userIdentity input{
-          width: 400px;
-          height: 20px;
-          padding: 10px;
-          cursor: pointer;
-          margin: 20px auto;
-          background-color: #041E42; 
-          border-color: white;
-          color: white;
-          font-size: 16px;
-          border-style: none none solid none  ;
-      }
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* -webkit-filter: blur(8px); */
-         filter: blur(18px);
-        z-index: 1;
-      }
-      .personalDataDiv .save {
-          width: 300px;
-          height: 40px;
-          border-top-left-radius: 1.25rem;
-          border-top-right-radius: 1.25rem;
-          border-bottom-right-radius: 1.25rem;
-          margin: 20px auto;
-          border-style: none;
-          font-size: 18px;
-          font-weight: bold;
-          color: white;
-          background-color:  #FFC220;
-      }
-      .saveButton{
-          width: 300px;
-          margin: 20px auto;
-      }
-      .personalDataDiv h3, .userIdentity #changePassword{
-          text-align: center;
-          color: white;
-      }
-      .personalDataDiv h2, .personalDataDiv h3{
-      
-      font-size: 22px;
-      }
-      #changePassword{
-          width: 300px;
-          height: 32px;
-          cursor: pointer;
-          border-top-left-radius: 1.25rem;
-          border-top-right-radius: 1.25rem;
-          border-bottom-right-radius: 1.25rem;
-          border-style: none;
-          margin: 60px 100px;
-          padding-top: 12px;
-          font-size: 16px;
-          font-weight: bold;
-          color: white;
-          background-color:  #FFC220;
-      }
-     
-      .radioButtons{
-          color: white;
-          width: 400px;
-          margin: 20px auto;
-      }
-      .form-container input{
-          border-radius: 4px;
-          padding: 10px;
-          margin-top: 10px;
-          cursor:default;
-          background: rgb(201, 198, 198);
-          border-style: none;
-          width: 300px;
-          height: 45px;
-      }
-      .registerFormContainer{
-          width: 600px;
-          left: 340px;
-      }
-      .registerFormContainer input{
-          width: 200px;
-         
-      }
-      .registerFormContainer .form-head{
-        margin-top: -50px;
-      }
-      input:focus{
-          outline: none;
-      }
-      .registerflex{
-          display: grid;
-          grid-template-columns: repeat(2, 260px);
-      }
-      .form-container .submit, .form-container .submitRegister{
-          width: 240px;
-          color: white;
-          border-top-left-radius: 0.8rem;
-          margin: 20px auto;
-            margin-left: -15px;  
-          border-top-right-radius: 0.8rem;
-          border-bottom-right-radius: 0.8rem;
-          border-bottom-left-radius: 0;
-          background-color: #FFC220;
-          height: 50px;
-          font-weight: bold;
-      }
-      .form-container .submit{
-        margin-left: -35px;
-      }
-    
-      .submit:active{
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-      }
-      .Cancel:active{
-        box-shadow: 0 5px #666;
-        transform: translateY(4px); 
-      }
-      .submitRegister:active{
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-      }
-    
-      .successMessage{
-          text-align: center;
-          font-size: 20px;
-          width: 100%;
-          padding: 60px;
+        a{
+          text-decoration: none;
+          color: inherit;
+        }
+        .fa-circle-o-notch{
           color: #ffc220;
-          margin: 50px auto;
-      }
-      
-      .form-container .spinner {
           text-align: center;
-          font-size: 20px;
-         position: relative;
-         left: 70px;
-         color: #041E42;
           animation: rotate 2s infinite linear;
-        }
-        .CancelRegister:active{
-          box-shadow: 0 2px #666;
-          transform: translateY(4px); 
-        }
-      
-        @keyframes rotate {
-          0% {
-            transform: rotate(0);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      .hide{
-          display: none;
-      }
-      .account-div{
-          margin: 20px auto 5px auto;
-      }
-      
-       .account-div{
-           text-decoration: none;
-           color: white;
-           cursor: pointer;
-           font-size: 16px;
-           line-height: 21px;
-       }
-       .account-div:hover{
-           color:#ffc220;
-       }
-      .registerFormContainer .registerFullName{
-        width: 460px;
-      }
-      .registerFormContainer .registerFullName::placeholder{
-          position: relative;
-          left: 70px;
-          
-      }
-       .account-div p{
-           padding: 10px;
-         text-align: center;
-       } 
-       .hidden{
-         visibility: hidden;
-       }
-       .Cancel, .CancelRegister{
-         cursor: pointer;
-         color: white;
-         font-size: 25px;
-        margin: 10px;
-        padding-left: 8px; 
-         width: 35px;
-         border-radius: 10px;
-         
-       }
-       .Cancel:hover{
-         background-color: var(--color-tetiary);
-       }
-       .CancelRegister:hover{
-        background-color: var(--color-tetiary);
-       }
-       .errorMessage{
-         color: white;
-         font-size: 16px;
-       }
-       .fa-exclamation-triangle{
-         font-size: 20px;
-       }
-       .renderError{
-
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 100;
-          background-color: rgb(224, 26, 26);
-
-          font-size: 19px;
-          width: 450px;
-          text-align: center ;
-      }
-      
-      .passwordCheck{
-          text-align: center; 
-          color: rgb(95, 78, 78);
-          margin:-20px auto 30px auto;
-      }
-      .passwordCheck p{
-        font-size: 15px;
-      }
-      .showPassword{
-          position: relative;
-          right: 40px;
-      }
-      @media screen and (max-width:1000px){
-        .form-container{
-          left: 160px;
-        }
-
-        .renderError{
         
-          left: 240px;
         }
-
        
-      }
-      @media screen and (max-width:900px){
+        .flex .fa-circle-o-notch{
+          font-size: 30px;
+          margin: 40px ;
+        }
+        .section__third__top-sales .fa-circle-o-notch{
+          width: 20px;
+          margin: 40px auto;
+          font-size: 50px;
+        }
+        
         .form-container{
-          width: 450px;
-          left: 150px;
+           position: absolute;
+           top: 90px;
+           left: 400px;
+           z-index: 100;
+            background-color: #041E42;
+            border-top-left-radius: 1.25rem;
+            border-top-right-radius: 1.25rem;
+            border-bottom-right-radius: 1.25rem;
+            width: 450px;
+            margin: 0px auto;
         }
-        .renderError{
-           left: 140px; 
-          margin: 10px auto;
+        .form-head{
+            text-align: center;
+            padding: 3px;
+            margin-bottom: -30px;
         }
-        .registerFormContainer{
-          width: 550px;
-          left: 110px;
+        .productsError{
+           position: relative;
+          left: 470px; 
+          margin: 20px auto;
+          width: 400px;
+          font-size: 20px;
+          color: rgb(214, 12, 12);
+          text-align: center;
         }
-      }
-      
-       @media screen and (max-width:600px){
-           .form-container{
-               width: 300px;
-               margin: 20px auto;
-               position: absolute;
-               top: 60px;
-               left: 80px;
-              
-           }
-           .renderError{
-             top: 2px;
-             font-size: 14px;
-             width: 300px;
-             left: 80px;
-           }
-           .form-container h3{
-               font-size: 16px;
-           }
-           .personalDataDiv{
-               max-width: 318px;
-           }
-          .form-container input, .form-container .submit{
-              width: 200px;
-          }
-          .form-container input{
-              height: 40px;
-              
-          }
-          .personalDataDiv input{
-              width: 250px;
-          }
-          .registerFormContainer .registerFullName{
-              width: 200px;
-            }
-            .registerFormContainer .registerFullName::placeholder{
-                left: -2px;
-                font-size: 10px;
-            }
-          .form-container .submit, .form-container .submitRegister{
-              height: 35px;
-              width: 120px;
-              font-size: 14px;
-          }
-          .personalDataDiv .radioButtons{
-              width: 170px;
-              display: flex;
-              margin: 15px 50px;
-          }
-          .personalDataDiv .save, #changePassword{
-              width: 200px;
-              margin: 10px 50px;
-              font-size: 15px;
-           }
-        #changePassword{
+        .form-head h3{
+            margin-top: 40px;
+            font-weight: 600;
+            line-height: 36px;
+            font-size: 24px;
+            margin-bottom: 34px;
+            color: #FFC220;
+        }
+        .fa-star-half-o, .fa-star{
+          color: #ffc220;
+        }
+  
+        .form-input{
+           padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-input div{
+            font-weight: 600;
+            line-height: 24px;
+            color: white;
+            font-size: 12.5px;
             margin: 10px auto;
         }
-        .form-container .spinner {
-           margin: 5rem auto; 
-           text-align: center;
-          font-size: 15px;
-         position: relative;
-         left: 8px;
-         color: #041E42;
-          animation: rotate 2s infinite linear;
+        .personalDataDiv{
+            background-color: #041E42;
+            margin: 20px auto;
+            width: 500px;
+            padding: 5px;
+            border-top-left-radius: 1.25rem;
+            border-top-right-radius: 1.25rem;
+            border-bottom-right-radius: 1.25rem;
+        }
+        .personalDataDiv h2{
+            text-align: center;
+            line-height: 100px;
+            height: 100px;
+            font-size: 18px;
+            margin-top: -5px;
+            border-radius: 1.25rem;
+            color: white;
+         
+        }
+        .userIdentity{
+            display: flex;
+            flex-direction: column;
+        }
+        .userIdentity input{
+            width: 400px;
+            height: 20px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 20px auto;
+            background-color: #041E42; 
+            border-color: white;
+            color: white;
+            font-size: 16px;
+            border-style: none none solid none  ;
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          /* -webkit-filter: blur(8px); */
+           filter: blur(18px);
+          z-index: 1;
+        }
+        .personalDataDiv .save {
+            width: 300px;
+            height: 40px;
+            border-top-left-radius: 1.25rem;
+            border-top-right-radius: 1.25rem;
+            border-bottom-right-radius: 1.25rem;
+            margin: 20px auto;
+            border-style: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color:  #FFC220;
+        }
+        .saveButton{
+            width: 300px;
+            margin: 20px auto;
+        }
+        .personalDataDiv h3, .userIdentity #changePassword{
+            text-align: center;
+            color: white;
+        }
+        .personalDataDiv h2, .personalDataDiv h3{
+        
+        font-size: 22px;
+        }
+        #changePassword{
+            width: 300px;
+            height: 32px;
+            cursor: pointer;
+            border-top-left-radius: 1.25rem;
+            border-top-right-radius: 1.25rem;
+            border-bottom-right-radius: 1.25rem;
+            border-style: none;
+            margin: 60px 100px;
+            padding-top: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color:  #FFC220;
+        }
+       
+        .radioButtons{
+            color: white;
+            width: 400px;
+            margin: 20px auto;
+        }
+        .form-container input{
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            cursor:default;
+            background: rgb(201, 198, 198);
+            border-style: none;
+            width: 300px;
+            height: 45px;
+        }
+        .registerFormContainer{
+            width: 600px;
+            left: 340px;
+        }
+        .registerFormContainer input{
+            width: 200px;
+           
+        }
+        .registerFormContainer .form-head{
+          margin-top: -50px;
+        }
+        input:focus{
+            outline: none;
         }
         .registerflex{
-          display: block;
-      } 
-       } 
+            display: grid;
+            grid-template-columns: repeat(2, 260px);
+        }
+        .form-container .submit, .form-container .submitRegister{
+            width: 240px;
+            color: white;
+            border-top-left-radius: 0.8rem;
+            margin: 20px auto;
+              margin-left: -15px;  
+            border-top-right-radius: 0.8rem;
+            border-bottom-right-radius: 0.8rem;
+            border-bottom-left-radius: 0;
+            background-color: #FFC220;
+            height: 50px;
+            font-weight: bold;
+        }
+        .form-container .submit{
+          margin-left: -45px;
+        }
+      
+        .submit:active{
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+        .Cancel:active{
+          box-shadow: 0 5px #666;
+          transform: translateY(4px); 
+        }
+        .submitRegister:active{
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+      
+        .successMessage{
+            text-align: center;
+            font-size: 20px;
+            width: 100%;
+            padding: 60px;
+            color: #ffc220;
+            margin: 50px auto;
+        }
+        
+        .form-container .spinner {
+            text-align: center;
+            font-size: 20px;
+           position: relative;
+           left: 50px;
+           color: #041E42;
+            animation: rotate 2s infinite linear;
+          }
+          .CancelRegister:active{
+            box-shadow: 0 2px #666;
+            transform: translateY(4px); 
+          }
+        
+          @keyframes rotate {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        .hide{
+            display: none;
+        }
+        .account-div{
+            margin: 20px auto 5px auto;
+        }
+        
+         .account-div{
+             text-decoration: none;
+             color: white;
+             cursor: pointer;
+             font-size: 16px;
+             line-height: 21px;
+         }
+         .account-div:hover{
+             color:#ffc220;
+         }
+        .registerFormContainer .registerFullName{
+          width: 460px;
+        }
+        .registerFormContainer .registerFullName::placeholder{
+            position: relative;
+            left: 70px;
+            
+        }
+         .account-div p{
+             padding: 10px;
+           text-align: center;
+         } 
+         .hidden{
+           visibility: hidden;
+         }
+         .Cancel, .CancelRegister{
+           cursor: pointer;
+           color: white;
+           font-size: 25px;
+          margin: 10px;
+          padding-left: 8px; 
+           width: 35px;
+           border-radius: 10px;
+           
+         }
+         .Cancel:hover{
+           background-color: var(--color-tetiary);
+         }
+         .CancelRegister:hover{
+          background-color: var(--color-tetiary);
+         }
+         .errorMessage{
+           color: white;
+           font-size: 16px;
+         }
+         .fa-exclamation-triangle{
+           font-size: 20px;
+         }
+         .renderError{
+             position: absolute;
+            color: #FFFFFF;
+             padding: 5px;
+             border-radius: 5px;
+              left: 400px;
+              z-index: 100;
+            background-color: rgb(197, 40, 40);
+            font-size: 19px;
+            width: 450px;
+            text-align: center ;
+            margin: 15px auto;  
+        }
+        
+        .passwordCheck{
+            text-align: center; 
+            color: rgb(95, 78, 78);
+            margin:-20px auto 30px auto;
+        }
+        .passwordCheck p{
+          font-size: 15px;
+        }
+        .showPassword{
+            position: relative;
+            right: 40px;
+        }
+        @media screen and (max-width:1000px){
+          .form-container{
+            left: 160px;
+          }
+          .renderError{
+          
+            left: 240px;
+          }
+         
+        }
+        @media screen and (max-width:900px){
+          .form-container{
+            width: 450px;
+            left: 150px;
+          }
+          .renderError{
+             left: 140px; 
+            margin: 10px auto;
+          }
+          .registerFormContainer{
+            width: 550px;
+            left: 110px;
+          }
+        }
+        
+         @media screen and (max-width:600px){
+             .form-container{
+                 width: 300px;
+                 margin: 20px auto;
+                 position: absolute;
+                 top: 60px;
+                 left: 80px;
+                
+             }
+             .renderError{
+               top: 2px;
+               font-size: 14px;
+               width: 300px;
+               left: 80px;
+             }
+             .form-container h3{
+                 font-size: 16px;
+             }
+             .personalDataDiv{
+                 max-width: 318px;
+             }
+            .form-container input, .form-container .submit{
+                width: 200px;
+            }
+            .form-container input{
+                height: 40px;
+                
+            }
+            .personalDataDiv input{
+                width: 250px;
+            }
+            .registerFormContainer .registerFullName{
+                width: 200px;
+              }
+              .registerFormContainer .registerFullName::placeholder{
+                  left: -2px;
+                  font-size: 10px;
+              }
+            .form-container .submit, .form-container .submitRegister{
+                height: 35px;
+                width: 120px;
+                font-size: 14px;
+            }
+            .personalDataDiv .radioButtons{
+                width: 170px;
+                display: flex;
+                margin: 15px 50px;
+            }
+            .personalDataDiv .save, #changePassword{
+                width: 200px;
+                margin: 10px 50px;
+                font-size: 15px;
+             }
+          #changePassword{
+              margin: 10px auto;
+          }
+          .form-container .spinner {
+             margin: 5rem auto; 
+             text-align: center;
+            font-size: 15px;
+           position: relative;
+           left: 8px;
+           color: #041E42;
+            animation: rotate 2s infinite linear;
+          }
+          .registerflex{
+            display: block;
+        } 
+         } 

@@ -60,12 +60,7 @@ class singleProductView extends abstractView{
         </div>
     </div>
 
-    <div class="about-product__add">
-  
-        <button class="about-product__add__btn">
-            Add To Cart
-         </button>
-    </div>
+   
         
     </div>
 </div> `

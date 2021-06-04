@@ -99,6 +99,7 @@ export default class abstractView{
 
     }
     clearError(){
+      if(!this.errContainer) return;
      this.errContainer.classList.add('hide')
      this.err.innerHTML = ''
     }
@@ -121,6 +122,14 @@ export default class abstractView{
 }
 seeMoreHandler2(data){
   this.seeMore2.addEventListener('click', ()=>this.showViews(data))
+}
+singleProductHandler(handler){
+  this.parentEl.addEventListener('click', function(e){
+    const btn= e.target.closest('.section__third__top-sales__container')
+     if(!btn) return
+    const id= btn.dataset.id
+      handler(id)
+  })
 }
 ValidateEmail(input) {
   let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

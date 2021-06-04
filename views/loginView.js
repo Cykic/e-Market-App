@@ -37,6 +37,7 @@ this.clearError()
     <!-- this is the bottom link -->
    `;
 }
+
  removeLogin(){
   this.parentEl.addEventListener('click', function(e){
     const btn= e.target.closest('.Cancel')
@@ -52,16 +53,11 @@ this.clearError()
       return this.generateMarkup()
     }
    
-    // loginHandler(){
-     
-    // this.login.addEventListener('click', this.showViews.bind(this))
-    // }
 
     getInputValues(){
       try{
         let data
         let email;
-       
         let password;  
          this.parentEl.addEventListener('submit', function(e){
          
@@ -71,7 +67,6 @@ this.clearError()
          password=document.querySelector('.password')
          const spinner= document.querySelector('.spinner')
         if(!email && !password) return;
-        LoginView.ValidateEmail(email)
         data={Email:email.value, Password: password.value}
          spinner.classList.remove('hidden')
         setTimeout(() => {
@@ -83,11 +78,9 @@ this.clearError()
           return data 
          }
          catch(err){
-           LoginView.renderError()
+           LoginView.renderError(err)
            console.log(err);
          }}
-
-
        loginRedirect(){  
         this.clearError()
         this.parentEl.addEventListener('click', function(e){
@@ -124,7 +117,7 @@ async function getLoginJSON (data){
             const res=  await fetch(`${API_URL}/signin`, requestOptions)
              const data= await res.json()
             console.log(data);
-            users.token= data.token
+            // users.token= data.token
             let userId= data._id
             UserId= userId;
             console.log(res);
@@ -133,18 +126,21 @@ async function getLoginJSON (data){
               throw new Error(`${data.message}`);
              }
              if(res.status==500){
-              LoginView.renderError('Please input your details')
+              LoginView.renderError(res.statusText)
                throw new Error('Please input your details')
              }
-             if(!data || !res){
-               throw new Error('No internet connection')
-             }
+             if(data.isAdmin){
+               users.token  = await data.token
+               console.log(users.token);
+             window.location.replace('./rexha-Admin-dashboard/admin.html')
+            }
              if(res.status==200){
               LoginView.removeOverlay()
               LoginView.parentEl.innerHTML='' 
               LoginView.userText.classList.remove('hide')
              
              }
+             
              await getUsersData()
           }
             catch(err){
@@ -153,6 +149,7 @@ async function getLoginJSON (data){
             }
          
    }
+
   export const users={}  
    async function getUsersData(){
     const getUser= await fetch(`${API_URL}/${UserId}`)
