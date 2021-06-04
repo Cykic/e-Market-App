@@ -8,7 +8,7 @@ class category2View extends abstractView{
     generateMarkupPreview(products){
      return ` 
      
-     <div class="section__third__top-sales__container">
+     <div data-id='${products._id}' class="section__third__top-sales__container">
      <a href="#${products._id}">
           <div class="section__third__top-sales__container__img">
        <img src="img/top-2.jfif" alt="T-shirt" class="imgs" />
@@ -23,6 +23,7 @@ class category2View extends abstractView{
      `
         
     }
+ 
 }
 export default new category2View()
 const cate2View= new category2View()

@@ -1,16 +1,17 @@
 import abstractView from "./abstractView.js";
 
 class category1View extends abstractView{  
- 
+ id;
   parentEl= document.querySelector('.section__third__top-sales')
  
   getHtml(){
     return this._data.map(this.generateMarkupPreview).join('')
     }
    
-    generateMarkupPreview(products){   
+    generateMarkupPreview(products){ 
+      cate1View.id=products._id  
      return `  
-     <div class="section__third__top-sales__container" id='hi'>
+     <div data-id='${products._id}' class="section__third__top-sales__container">
      <a href="#${products._id}">
           <div class="section__third__top-sales__container__img">
        <img src="img/top-2.jfif" alt="T-shirt" class="imgs" />
@@ -24,6 +25,8 @@ class category1View extends abstractView{
      </div>
      `   
     }
+
+  
  
 }
 export default new category1View()

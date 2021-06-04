@@ -68,6 +68,7 @@ class registerView extends abstractView{
           return true;
       }
   }
+  
 
   async getHtml(){
     this.addOverlay()
