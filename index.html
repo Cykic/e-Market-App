@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
+
   <body>  <div class="renderError hide"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         <p class="errorMessage"></p>
         </div>
@@ -29,8 +30,15 @@
 
     <p class="loginView"></p>
 
+
     <!-- Container Containing all the sections -->
     <div class="container">
+      <div class="renderError hide">
+        <p class="errorMessage"></p>
+      
+      </div>
+  
+      <p class="loginView"></p>
       <header class="nav">
         <!-- The name by the top right of the header -->
         <div class="nav__company-name"></div>
@@ -72,6 +80,8 @@
       <!-- Major Body -->
 
       <section class="section main">
+          <!-- WARNING -->
+      <div class="added-cart hide">Added to cart</div>
         <!-- the first section -->
         <div class="section__first">
           <img
@@ -152,10 +162,12 @@
           </div>
         </div>
 
+      
+
         <!-- Third Sections (Top Sales) -->
 
-        <div class="section__third">
-          <div class="flex-wrap2" >
+        <div class="section__third" id="products">
+          <div class="flex-wrap2">
 
             <h3 class="categories-header">Pants</h3>
             <button class="see-more">SEE MORE</button>
@@ -170,7 +182,7 @@
 
         <!-- Fourth Sections (Mens clothes) -->
         <div class="section__fourth">
-          <div class="flex-wrap">
+          <div class="flex-wrap2">
             <h3 class="categories-header">Shirts</h3>
             <button class="see-more see-more2">SEE MORE</button>
           </div>
@@ -185,10 +197,8 @@
         <!-- Fifth Sections (Women's clothes) -->
         <div class="section__fifth curProduct hide">
 
-
           <div class="flex-wrap2">
-         
-           <h3 class="categories-header currentCategory"></h3> 
+            <h3 class="categories-header currentCategory"></h3>
 
             <button class="see-more">SEE MORE</button>
           </div>
@@ -204,7 +214,7 @@
 
         <!-- eight Sections (leathers ) -->
         <div class="section__six section__fifth singleProduct hide">
-          <div class="flex-wrap"></div>
+          <div class="flex-wrap2"></div>
           <div
             class="section__third__top-sales flex-wrap single-productCategory"
           >
@@ -232,12 +242,12 @@
           </div>
         </div>
       </section>
-    </div>
+    
 
 
 
     <!-- CART JS -->
-    <div id="cart-view">
+    <div id="cart-view" class="hide">
       <!-- <p id="cart-count">Your Cart: 0 Item</p>  -->
       <div class="cart-container hide">
         <div class="body-flex">
@@ -326,7 +336,7 @@
           </div>
         </div>
       </div>
-
+</div>
       
     
     <script type="module" src="../js/controller.js"></script>
