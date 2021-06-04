@@ -20,9 +20,16 @@
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-   
-      
+
+
+  <body>  <div class="renderError hide"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        <p class="errorMessage"></p>
+        </div>
+  
+    
+
+    <p class="loginView"></p>
+
 
     <!-- Container Containing all the sections -->
     <div class="container">
@@ -56,7 +63,11 @@
             <a class="product display2"> Account </a>
             <a class="product display" id="registerView"> Register </a>
             <a class="product display" id="loginView"> Login </a>
-            <a class="user product block"> Profile </a>
+
+            <a class="user product hide"> </a>  
+  
+           
+
           </div>
 
           <div id="cart" class="nav__second-sec__icon">
@@ -89,8 +100,11 @@
         <div class="productsError"></div>
         <!-- Second Sections (categories) -->
 
-        <div class="section__second secondSection">
-          <h3 class="categories-header">Categories</h3>
+      
+        <div class="section__second secondSection" id="products">
+        
+          <h3 class="categories-header" > Categories</h3>
+
           <div class="flex">
             <i
               class="fa fa-circle-o-notch loading-icon hide"
@@ -151,8 +165,10 @@
       
 
         <!-- Third Sections (Top Sales) -->
+
         <div class="section__third" id="products">
           <div class="flex-wrap2">
+
             <h3 class="categories-header">Pants</h3>
             <button class="see-more">SEE MORE</button>
           </div>
@@ -180,8 +196,10 @@
 
         <!-- Fifth Sections (Women's clothes) -->
         <div class="section__fifth curProduct hide">
+
           <div class="flex-wrap2">
             <h3 class="categories-header currentCategory"></h3>
+
             <button class="see-more">SEE MORE</button>
           </div>
           <div
