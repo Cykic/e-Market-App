@@ -131,7 +131,7 @@ window.addEventListener("hashchange", controlSingleProducts);
 
 
  window.addEventListener('hashchange', controlSingleProducts)
-console.log(users);
+// console.log(users);
  registerHandler()
  getAddToCartButtons()
 

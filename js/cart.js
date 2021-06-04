@@ -46,17 +46,17 @@ export class Cart {
     this.updateLocalStorage()
     this._updateCart()
 
-    console.log(this.cart);
+    // console.log(this.cart);
   }
 
   removefromCart(productid) {
     const foundItem = this.findProduct(productid);
-    console.log(foundItem);
+    // console.log(foundItem);
     const productIndex = this.cart.findIndex((prd) => prd === foundItem);
     this.cart.splice(productIndex, 1);
     this.updateLocalStorage()
     warning(`${foundItem.name} was removed`)
-    console.log(this.cart);
+    // console.log(this.cart);
   }
 
   total() {
@@ -104,9 +104,9 @@ export class Cart {
     
       <!-- quantity -->
       <div class="prd-qty-container">
-      <span>-</span>
+      
       <p class="prd-quantity">Quantity:${item.quantity}</p>
-      <div class="plus">+</div>
+      
         
         <div class="prd-footer">
         <p class="prd-remove" data-id = ${item["_id"]}>Remove</p>
@@ -125,7 +125,6 @@ export class Cart {
       btn.addEventListener("click", this.removeHandler.bind(this, btn));
     });
     this.total();
-    console.log(this.totalAmt);
     this._labelChanges();
 
     // LOCAL STORAGE
@@ -180,7 +179,7 @@ export class Cart {
     `
     this.cartContainer.insertAdjacentHTML("afterbegin", html);
     this.cartContainer.classList.remove("hide")
-    console.log("Your Cart is Empty");
+    // console.log("Your Cart is Empty");
 
   }
 }

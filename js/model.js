@@ -20,7 +20,7 @@ export const state ={
       const res= await Promise.race([fetch(`https://shopappanter.herokuapp.com/api/products`), timeout(10)])
       const data = await res.json()
       state.products = data.products
-      console.log(state.products)
+      // console.log(state.products)
       
 
     }
