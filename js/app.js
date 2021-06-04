@@ -1,5 +1,6 @@
 import { Cart } from "./cart.js";
 import { warning } from "./helper.js";
+import { addedAlert } from "./helper.js";
 import { Payment } from "./payment.js";
 
 const checkout = document.querySelector(".checkout-btn");
@@ -66,8 +67,9 @@ export function getAddToCartButtons() {
 }
 
 const click = (e) => {
-  console.log(e.target);
   cart.addtoCart(`${e.target.dataset.id}`);
+  addedAlert()
+  
 };
 
 // testButton.addEventListener("click", async function () {

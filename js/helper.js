@@ -4,6 +4,15 @@ export function warning(message) {
   warning.classList.toggle("hide");
   setTimeout(() => warning.classList.toggle("hide"), 1500);
 }
+// ADDED ALERT
+export function addedAlert() {
+  const warning = document.querySelector(".added-cart");
+  // warning.textContent = message;
+  warning.classList.toggle("hide");
+  setTimeout(() => warning.classList.toggle("hide"), 1500);
+}
+
+
 // SPINNER
 export function spinner(bool) {
   const spinner = document.querySelector(".sk-chase");
