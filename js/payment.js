@@ -1,3 +1,4 @@
+import { users } from "../views/loginView.js";
 import { cart } from "./app.js";
 
 export class Payment {
@@ -26,9 +27,9 @@ export class Payment {
           consumer_mac: "92a3-912ba-1192a",
         },
         customer: {
-          email: "cornelius@gmail.com",
-          phone_number: "08102909304",
-          name: "Flutterwave Developers",
+          email: users.email,
+          phone_number: users.phoneNumber,
+          name: users.name,
         },
         callback: function (data) {
           // console.log(data);

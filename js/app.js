@@ -1,3 +1,4 @@
+import { users } from "../views/loginView.js";
 import { Cart } from "./cart.js";
 import { warning } from "./helper.js";
 import { Payment } from "./payment.js";
@@ -37,6 +38,14 @@ async function initcart() {
       checkout.classList.add("disabled");
       return;
     }
+    
+    if(!users.name) {
+      warning("Login to Checkout Item (s)")
+      return
+    }
+
+
+    console.log(users.name);
     checkout.classList.remove("disabled");
     new Payment().makePayment(cart.totalAmt);
   });
@@ -44,6 +53,8 @@ async function initcart() {
 
 initcart();
 
+
+// ADD event handler to add to cart button after DOM change
 export function getAddToCartButtons() {
   const targetNode = document.body;
   const config = { childList: true, subtree: true };
@@ -51,7 +62,7 @@ export function getAddToCartButtons() {
   const callback = function (mutationsList, observer) {
     for (let mutation of mutationsList) {
       if (mutation.type === "childList") {
-        console.log("DOM changed");
+        // console.log("DOM changed");
 
         const addToCarts = document.querySelectorAll(".add-to-cart");
         addToCarts.forEach((button) => {
@@ -70,8 +81,3 @@ const click = (e) => {
   cart.addtoCart(`${e.target.dataset.id}`);
 };
 
-// testButton.addEventListener("click", async function () {
-//   // await cart.getAllProducts();
-//   cart.addtoCart(`${testButton.dataset.id}`);
-
-// });
