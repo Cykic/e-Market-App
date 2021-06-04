@@ -23,17 +23,7 @@ class registerView extends abstractView{
     parentEl=document.querySelector('.loginView')
     userText=document.querySelector('.user')
    
-     ValidateEmail(input) {
-      let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      if (input.value.match(validRegex)) {
-    
-        return true;
-    
-      } else {
-          this.renderError("Invalid email address!")
-         throw new Error("Invalid email address!"); 
-      }
-    }
+     
     Validatemobile(input) {
       let validRegex = /^\+[1-9]{1}[0-9]{3,14}$/;
       if (input.value.match(validRegex)) {
@@ -107,7 +97,7 @@ class registerView extends abstractView{
             <input type="password"  name="" id="password2" class='registerPassword confirmPassword' title=' Must contain at least eight characters'>      
           </div>
     </div>
-            <div><input class="submitRegister" type="submit" value="REGISTER"></div>
+            <div><i class="fa fa-spinner spinner hidden" aria-hidden="true"></i><input class="submitRegister" type="submit" value="REGISTER"></div>
             <div class="passwordCheck"> <p >Input Password must be 7 to 15 characters which contain at least one numeric digit and a special character</p></div>
             </form>
             <div class="account-div">
@@ -128,6 +118,7 @@ removeRegistration(){
         register.parentEl.innerHTML='' 
   })
 }
+
  async getInputValues(){
    try{
      let data;
@@ -153,8 +144,12 @@ removeRegistration(){
       register.CheckPassword(password)
       register.confirmPassword(password, confirmPassword)
       data={name: fullName.value, email: email.value, password: password.value, Phone: phoneNumber.value}
-      userText.innerHTML= fullName.split(' ')[0]    
-       spinner.classList.remove('hide')
+      
+      spinner.classList.remove('hidden')
+       setTimeout(() => {
+        spinner.classList.add('hidden')
+       }, 2000);
+      
       getJSON(data)  
        }) 
      return data 
@@ -204,7 +199,7 @@ this.parentEl.addEventListener('click', function(e){
           }
             catch(err){
               console.log(err);
-              register.renderError('No internet connection')
+              register.renderError(err)
             }
           }  
     const register= new registerView()

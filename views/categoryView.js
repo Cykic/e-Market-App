@@ -28,7 +28,7 @@ class categoryView extends abstractView{
             
 
               <div class="section__second__categories__icon">
-                <i class="fa fa-child"></i>
+              <i class="fa fa-shopping-bag"></i>
               </div>
 
               <h3 class="categories-name">${results}</h3>

@@ -27,12 +27,13 @@ export default class abstractView{
   } 
 
   defaultView(){
+    this.clearError()
     this.sectionSecond.classList.remove('hide')
     this.parentElContainer.classList.add('hide')
       this.singlePage.classList.add('hide')
       this.loginView.innerHTML=''
       this.removeOverlay()
-      this.clearError()
+     
       this.container1.classList.remove('hide')
       this.container2.classList.remove('hide')
     
@@ -94,11 +95,12 @@ export default class abstractView{
     renderError(errMessage){
         this.errContainer.classList.remove('hide')
         this.err.classList.remove('hide')
-     this.err.innerHTML = errMessage
+     this.err.innerHTML += errMessage
 
     }
     clearError(){
      this.errContainer.classList.add('hide')
+     this.err.innerHTML = ''
     }
     calculatePrice(price){
       let newPrice = (+price*410.50)
@@ -113,13 +115,25 @@ export default class abstractView{
  renderSpinner(){
    [...this.spinner].forEach(el=>el.classList.remove('hide'))
  }
-
+ 
  seeMoreHandler(data){
   this.seeMore.addEventListener('click', ()=>this.showViews(data))
 }
 seeMoreHandler2(data){
   this.seeMore2.addEventListener('click', ()=>this.showViews(data))
 }
+ValidateEmail(input) {
+  let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (input.value.match(validRegex)) {
+
+    return true;
+
+  } else {
+      this.renderError("Invalid email address!")
+     throw new Error("Invalid email address!"); 
+  }
+}
+
 
 starRating = str => {
  let roundHalf = num => {

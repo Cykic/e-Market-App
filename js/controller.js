@@ -6,6 +6,7 @@ import category2View from '../views/category2View.js'
 import categoryView from '../views/categoryView.js'
 import currentCategoryView from '../views/currentCategoryView.js'
 import singleProductView from '../views/singleProductView.js'
+import {users} from '../views/loginView.js'
 import abstractView from '../views/abstractView.js'
 const abstract= new abstractView()
 function push(event, view){
@@ -27,10 +28,10 @@ window.addEventListener('popstate', event=> {
 
 })
 
-loginView.getInputValues()
+
 registerView.registerRedirect()
 loginView.loginRedirect()
-loginView.removeLogin()
+
 category1View.renderSpinner()
 async function registerHandler(){
     try{
@@ -41,7 +42,18 @@ async function registerHandler(){
         registerView.renderError(err)
     }
 }
-registerHandler()
+loginHandler()
+
+
+async function loginHandler(){
+    try{
+        loginView.getInputValues()
+        loginView.removeLogin()
+    }
+  catch(err){
+    registerView.renderError(err)
+  }
+}
 
 async function controlCategoriesView(){
     try{  
@@ -54,6 +66,7 @@ async function controlCategoriesView(){
     }
     catch(err){
         console.log(err);
+        categoryView.renderProductsError('No internet connection detected. check your network connection or reload the page')
         
     }
 }  
@@ -88,4 +101,5 @@ categoryView.curCategoryViewHandler(controlDisplayCategories)
  window.addEventListener('load', controlCategories)
 
  window.addEventListener('hashchange', controlSingleProducts)
-
+console.log(users);
+ registerHandler()

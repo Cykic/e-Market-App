@@ -28,7 +28,7 @@ this.clearError()
         <div><label for="password">Password</label><br>
             <input type="password" name="" id="password" class='password'>
         </div>
-        <div><input class="submit" id='Submit' type="submit" value="LOG IN"></div>
+        <div><i class="fa fa-spinner spinner hidden" aria-hidden="true"></i><input class="submit" id='Submit' type="submit" value="LOG IN"></div>
     </form>
     <div class="account-div">
     <p class="login-no-account">Don't have an account? Register</p>
@@ -58,28 +58,38 @@ this.clearError()
     // }
 
     getInputValues(){
+      try{
         let data
         let email;
        
         let password;  
          this.parentEl.addEventListener('submit', function(e){
-          LoginView.clearError()
          
          e.preventDefault()
-        
+         LoginView.clearError()
          email =document.querySelector('.Email')
          password=document.querySelector('.password')
+         const spinner= document.querySelector('.spinner')
         if(!email && !password) return;
+        LoginView.ValidateEmail(email)
         data={Email:email.value, Password: password.value}
-       
+         spinner.classList.remove('hidden')
+        setTimeout(() => {
+          spinner.classList.add('hidden')
+         }, 2000);
           getLoginJSON(data)
-  
-         
+        
            })
-     
+          return data 
          }
-          loginRedirect(){  
-          this.clearError()
+         catch(err){
+           LoginView.renderError()
+           console.log(err);
+         }}
+
+
+       loginRedirect(){  
+        this.clearError()
         this.parentEl.addEventListener('click', function(e){
            const registerReDirect = e.target.closest('.login-no-account') 
            if (!registerReDirect) return;
@@ -88,7 +98,13 @@ this.clearError()
         }
 }
 export default new loginView()
-
+const convertName = function(name){
+  const capital= name.toLowerCase()
+  const remain = name.slice(0,1)
+ const converted= `${remain.toUpperCase()}${capital.slice(1, name.length)}!`
+ return converted
+}
+let UserId;
 async function getLoginJSON (data){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -108,23 +124,47 @@ async function getLoginJSON (data){
             const res=  await fetch(`${API_URL}/signin`, requestOptions)
              const data= await res.json()
             console.log(data);
-            console.log(data.email, data.password);
+            users.token= data.token
+            let userId= data._id
+            UserId= userId;
             console.log(res);
+       
             if(res.status==400) {
               throw new Error(`${data.message}`);
              }
              if(res.status==500){
+              LoginView.renderError('Please input your details')
                throw new Error('Please input your details')
+             }
+             if(!data || !res){
+               throw new Error('No internet connection')
              }
              if(res.status==200){
               LoginView.removeOverlay()
               LoginView.parentEl.innerHTML='' 
               LoginView.userText.classList.remove('hide')
+             
              }
+             await getUsersData()
           }
             catch(err){
               console.log(err);
-              LoginView.renderError('No internet connection')
+              LoginView.renderError(err)
             }
+         
    }
+  export const users={}  
+   async function getUsersData(){
+    const getUser= await fetch(`${API_URL}/${UserId}`)
+    const userData= await getUser.json()
+     users.name= userData.name;
+     users.isAdmin=userData.isAdmin
+     users.id= userData._id
+     users.email=userData.email
+    
+     users.phoneNumber=userData.phonenumber
+      console.log(userData);
+     LoginView.userText.innerHTML=`Welcome, ${convertName(userData.name).split(' ')[0]} ` 
+   }
+
 const LoginView = new loginView()
