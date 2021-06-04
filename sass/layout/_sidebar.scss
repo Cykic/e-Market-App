@@ -45,6 +45,10 @@
     margin-top: 1rem;
     border-radius: 0.35714rem;
     font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-options {
@@ -57,11 +61,16 @@
       grid-gap: 2rem;
       grid-template-columns: 1fr 3fr 1fr;
       align-items: center;
-      padding: 5px 1.42857rem;
-      border-radius: 5px;
+      padding: 0.71429rem;
+      border-radius: 0.35714rem;
       margin-top: 2rem;
       margin-bottom: 2rem;
       color: var(--primary-text-color);
+      transition: background-color 0.8s ease-in-out;
+
+      &:hover {
+        background-color: var(--new-users-bg);
+      }
 
       &:active {
         background-color: var(--active-bg-color);
@@ -100,7 +109,6 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
-  right: 0;
   height: 100%;
   z-index: 500;
   width: 20rem;
@@ -111,7 +119,10 @@
     font-size: 3rem;
     position: fixed;
     top: -0.6rem;
-    right: 1rem;
+    // // right: 1rem;
+    // display: none;
+    display: flex;
+    align-self: flex-end;
 
     a {
       text-decoration: none;
@@ -170,8 +181,8 @@
       grid-gap: 2rem;
       grid-template-columns: 1fr 3fr 1fr;
       align-items: center;
-      padding: 5px 1.42857rem;
-      border-radius: 5px;
+      padding: 0.35714rem 1.42857rem;
+      border-radius: 0.35714rem;
       margin-top: 2rem;
       margin-bottom: 2rem;
       color: var(--primary-text-color);

@@ -49,6 +49,10 @@
       &:not(:nth-child(1)) {
         margin-left: -0.35714rem;
       }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -75,6 +79,10 @@
 
     &-day {
       font-size: 0.9rem;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &-prev {
@@ -82,12 +90,20 @@
         width: 0.8rem;
         height: 0.8rem;
       }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &-next {
       &__icon {
         width: 0.8rem;
         height: 0.8rem;
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -111,6 +127,14 @@
     padding: 2.14286rem 2.85714rem;
     position: relative;
     padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
+    border-radius: 0.35714rem;
+    transition: transform 0.6s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0.28571rem 0.57143rem 0 rgba(0, 0, 0, 0.2),
+        0 0.42857rem 1.42857rem 0 rgba(0, 0, 0, 0.19);
+      transform: scale(1.06);
+    }
 
     &--heading {
       text-transform: uppercase;
@@ -161,6 +185,14 @@
     background-color: var(--income-bg);
     padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
     position: relative;
+    border-radius: 0.35714rem;
+    transition: transform 0.6s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0.28571rem 0.57143rem 0 rgba(0, 0, 0, 0.2),
+        0 0.42857rem 1.42857rem 0 rgba(0, 0, 0, 0.19);
+      transform: scale(1.06);
+    }
 
     &--heading {
       text-transform: uppercase;
@@ -211,6 +243,14 @@
     background-color: var(--expenses-bg);
     padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
     position: relative;
+    border-radius: 0.35714rem;
+    transition: transform 0.6s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0.28571rem 0.57143rem 0 rgba(0, 0, 0, 0.2),
+        0 0.42857rem 1.42857rem 0 rgba(0, 0, 0, 0.19);
+      transform: scale(1.06);
+    }
 
     &--heading {
       text-transform: uppercase;
@@ -261,6 +301,15 @@
     background-color: var(--new-users-bg);
     padding: 2.85714rem 2.14286rem 1.42857rem 2.14286rem;
     position: relative;
+    border-radius: 0.35714rem;
+
+    transition: transform 0.6s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0.28571rem 0.57143rem 0 rgba(0, 0, 0, 0.2),
+        0 0.42857rem 1.42857rem 0 rgba(0, 0, 0, 0.19);
+      transform: scale(1.06);
+    }
 
     &--heading {
       text-transform: uppercase;
@@ -700,7 +749,7 @@
 
       .addCart {
         border: none;
-        padding: 1.07143rem 1.42857rem;
+        padding: 0.7143rem;
         border-radius: 0.35714rem;
         color: var(--primary-text-color);
         background-color: var(--active-bg-color);
