@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Admin</title>
+  </head>
+  <body class="container">
+    <div class="sidebar__admin">
+      <div class="sidebar__admin-info">
+        <div class="sidebar__admin-photo">
+          <img src="images/admin.jpg" alt="admin-photo" />
+        </div>
+        <div class="sidebar__admin-name">Matt Hummels</div>
+        <div class="sidebar__admin-email">mattttt@gmail.com</div>
+        <button class="sidebar__admin-upgrade btn">Log Out</button>
+      </div>
+
+      <ul class="sidebar__admin-options">
+        <li class="sidebar__admin-options--home">
+          <a href="#">
+            <span class="image">
+              <svg class="sidebar__admin-options--home__img">
+                <use xlink:href="images/sprite.svg#icon-home3"></use>
+              </svg>
+            </span>
+            <p class="title">Home</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--transactions">
+          <a href="orders.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--transactions__img">
+                <use xlink:href="images/sprite.svg#icon-menu"></use>
+              </svg>
+            </span>
+            <p class="title">Orders</p>
+            <span class="number"> 45</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--sales">
+          <a href="sales.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--sales__img">
+                <use xlink:href="images/sprite.svg#icon-bar-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Sales</p>
+            <span class="number sold"> 15</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--products">
+          <a href="products.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--products__img">
+                <use xlink:href="images/sprite.svg#icon-box"></use>
+              </svg>
+            </span>
+            <p class="title">Products</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--users">
+          <a href="users.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--users__img">
+                <use xlink:href="images/sprite.svg#icon-users"></use>
+              </svg>
+            </span>
+            <p class="title">Users</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--analysis">
+          <a href="#">
+            <span class="image">
+              <svg class="sidebar__admin-options--analysis__img">
+                <use xlink:href="images/sprite.svg#icon-line-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Analysis</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-body">
+      <div class="header">
+        <div class="header__cta">
+          <div class="header__cta-addbtn">
+            <button class="header__cta-addbtn--img">+</button>
+            <div class="header__cta-addbtn--text"><p>Add Product</p></div>
+          </div>
+
+          <!-- Remove product -->
+          <div class="header__cta-deletebtn">
+            <button class="header__cta-deletebtn--img">-</button>
+            <div class="header__cta-deletebtn--text">
+              <p>Delete Product</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="header__search">
+          <div class="header__search-text">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Type in here"
+            />
+          </div>
+          <div class="header__search-btn">
+            <button type="submit" value="Search">Search</button>
+          </div>
+        </div>
+
+        <div class="header__profile">
+          <div class="header__profile-pix">
+            <img
+              src="images/admin.jpg"
+              alt="profile-img"
+              class="header__profile-pix--001"
+            />
+          </div>
+          <div class="header__profile-name"><p>Alan Jones</p></div>
+        </div>
+      </div>
+
+      <section class="dashboard">
+        <div class="dashboard__title">
+          <h2 class="dashboard__title-00">Ecommerce Dashboard</h2>
+          <h4 class="dashboard__title-01">Dashboard > Products</h4>
+        </div>
+
+        <div class="dashboard__time">
+          <button class="dashboard__time-day">Day</button>
+          <button class="dashboard__time-week">Week</button>
+          <button class="dashboard__time-month">Month</button>
+          <button class="dashboard__time-year">Year</button>
+        </div>
+
+        <div class="dashboard__date">
+          <button class="dashboard__date-prev">
+            <svg class="dashboard__date-prev__icon">
+              <use xlink:href="images/sprite.svg#icon-chevron-left"></use>
+            </svg>
+          </button>
+          <button class="dashboard__date-day">24th May 2020</button>
+          <button class="dashboard__date-next">
+            <svg class="dashboard__date-next__icon">
+              <use xlink:href="images/sprite.svg#icon-chevron-right"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Products body -->
+      <div class="category">
+        <!-- Men section -->
+        <h2 class="category__heading">Men's Clothes</h2>
+        <section class="category-men">
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/plain-top.jfif" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Second -->
+
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/jean-jacket.jpg" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- third -->
+
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/armless.jfif" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fourth -->
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/child-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fifth -->
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/top-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Sixth -->
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/top-4.jfif" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 7th -->
+
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/plain-top.jfif" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 8th-->
+          <div class="category-men__item">
+            <div class="category-men__item-img">
+              <img src="images/mans-clothes.jfif" alt="item-img" />
+            </div>
+            <div class="category-men__item-details">
+              <h2 class="category-men__item-details--name">Shinning Clothes</h2>
+              <h4 class="category-men__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-men__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-men__item-remove">
+              <svg class="category-men__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <!-- Women section -->
+        <h2 class="category__heading-item">Women's Clothes</h2>
+        <section class="category-women">
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/baby-doll.jfif" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Second -->
+
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/jean-jacket.jpg" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- third -->
+
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/jean-gown.jfif" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fourth -->
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/belt-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fifth -->
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/belt-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Sixth -->
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/bag-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 7th -->
+
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/bag-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 8th-->
+          <div class="category-women__item">
+            <div class="category-women__item-img">
+              <img src="images/acc-3.jfif" alt="item-img" />
+            </div>
+            <div class="category-women__item-details">
+              <h2 class="category-women__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-women__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-women__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-women__item-remove">
+              <svg class="category-women__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <!-- end -->
+
+        <!-- Children's section -->
+        <h2 class="category__heading-item">Children's Clothes</h2>
+        <section class="category-children">
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/child-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Second -->
+
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/child-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- third -->
+
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/child-3.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fourth -->
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/child-4.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fifth -->
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/children.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Sixth -->
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/baby-doll.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 7th -->
+
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/acc-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 8th-->
+          <div class="category-children__item">
+            <div class="category-children__item-img">
+              <img src="images/acc-3.jfif" alt="item-img" />
+            </div>
+            <div class="category-children__item-details">
+              <h2 class="category-children__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-children__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-children__item-details--price">$300</p>
+            </div>
+
+            <!-- Remove item -->
+            <div class="category-children__item-remove">
+              <svg class="category-children__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <!-- end children's section -->
+
+        <!-- Shoes -->
+        <h2 class="category__heading-item">Shoes/leathers</h2>
+        <section class="category-shoes">
+          <div class="category-shoes__item">
+            <div class="category-men__item-img">
+              <img src="images/shoe-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Second -->
+
+          <div class="category-shoes__item">
+            <div class="category-shoes__item-img">
+              <img src="images/shoe-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- third -->
+
+          <div class="category-shoes__item">
+            <div class="category-shoes__item-img">
+              <img src="images/shoe-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fourth -->
+          <div class="category-shoes__item">
+            <div class="category-shoes__item-img">
+              <img src="images/shoe-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fifth -->
+          <div class="category-shoes__item">
+            <div class="category-shoes__item-img">
+              <img src="images/jean-jacket.jpg" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Sixth -->
+          <div class="category-shoes__item">
+            <div class="category-shoes__item-img">
+              <img src="images/shoe-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 7th -->
+
+          <div class="category-shoes__item">
+            <div class="category-shoes__item-img">
+              <img src="images/shoe-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 8th-->
+          <div class="category-shoes__item">
+            <div class="category-shoes__item-img">
+              <img src="images/shoe-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-shoes__item-details">
+              <h2 class="category-shoes__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-shoes__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-shoes__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-shoes__item-remove">
+              <svg class="category-shoes__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <!-- End -->
+
+        <!-- Accessories -->
+        <h2 class="category__heading-item">Accessories</h2>
+        <section class="category-accessories">
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Second -->
+
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- third -->
+
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-3.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fourth -->
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-4.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- fifth -->
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-4.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Sixth -->
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-3.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 7th -->
+
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-2.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 8th-->
+          <div class="category-accessories__item">
+            <div class="category-accessories__item-img">
+              <img src="images/acc-1.jfif" alt="item-img" />
+            </div>
+            <div class="category-accessories__item-details">
+              <h2 class="category-accessories__item-details--name">
+                Shinning Clothes
+              </h2>
+              <h4 class="category-accessories__item-details--description">
+                Best you can wear
+              </h4>
+              <p class="category-accessories__item-details--price">$300</p>
+            </div>
+            <!-- Remove item -->
+            <div class="category-accessories__item-remove">
+              <svg class="category-accessories__item-remove__icon">
+                <use xlink:href="images/sprite.svg#icon-bin"></use>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <!-- end -->
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Admin</title>
+  </head>
+  <body class="container">
+    <div class="sidebar__admin">
+      <div class="sidebar__admin-info">
+        <div class="sidebar__admin-photo">
+          <img src="images/admin.jpg" alt="admin-photo" />
+        </div>
+        <div class="sidebar__admin-name">Matt Hummels</div>
+        <div class="sidebar__admin-email">mattttt@gmail.com</div>
+        <button class="sidebar__admin-upgrade btn">Log Out</button>
+      </div>
+
+      <ul class="sidebar__admin-options">
+        <li class="sidebar__admin-options--home">
+          <a href="#">
+            <span class="image">
+              <svg class="sidebar__admin-options--home__img">
+                <use xlink:href="images/sprite.svg#icon-home3"></use>
+              </svg>
+            </span>
+            <p class="title">Home</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--transactions">
+          <a href="orders.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--transactions__img">
+                <use xlink:href="images/sprite.svg#icon-menu"></use>
+              </svg>
+            </span>
+            <p class="title">Orders</p>
+            <span class="number"> 45</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--sales">
+          <a href="sales.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--sales__img">
+                <use xlink:href="images/sprite.svg#icon-bar-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Sales</p>
+            <span class="number sold"> 15</span>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--products">
+          <a href="products.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--products__img">
+                <use xlink:href="images/sprite.svg#icon-box"></use>
+              </svg>
+            </span>
+            <p class="title">Products</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--users">
+          <a href="users.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--users__img">
+                <use xlink:href="images/sprite.svg#icon-users"></use>
+              </svg>
+            </span>
+            <p class="title">Users</p>
+          </a>
+        </li>
+
+        <li class="sidebar__admin-options--analysis">
+          <a href="analytics.html">
+            <span class="image">
+              <svg class="sidebar__admin-options--analysis__img">
+                <use xlink:href="images/sprite.svg#icon-line-graph"></use>
+              </svg>
+            </span>
+            <p class="title">Analysis</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-body">
+      <div class="users">
+        <h2 class="users__heading">Rexha Users</h2>
+
+        <div class="users__export">
+          <a href="#">
+            <div class="users__export-print">
+              <span class="users__export-print--img">
+                <svg class="users__export-print--img__icon">
+                  <use xlink:href="images/sprite.svg#icon-download"></use>
+                </svg>
+              </span>
+              <p class="users__export-print--text">Export</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="users__search">
+          <input
+            type="search"
+            name="search"
+            id="export-search"
+            placeholder="Search"
+          />
+        </div>
+
+        <!-- Table Details -->
+
+        <table class="users__details">
+          <thead class="users__details-heading">
+            <th>No</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Options</th>
+          </thead>
+
+          <tbody class="users__details-body">
+            <tr>
+              <td data-label="No">1</td>
+              <td data-label="Firstname">Michael</td>
+              <td data-label="Lastname">Simba</td>
+              <td data-label="Phone Number">09082345612</td>
+              <td data-label="Email">africaman23@gmail.com</td>
+              <td data-label="Password">345bgf</td>
+              <td data-label="Options">View</td>
+            </tr>
+
+            <tr>
+              <td data-label="No">2</td>
+              <td data-label="Firstname">Michael</td>
+              <td data-label="Lastname">Simba</td>
+              <td data-label="Phone Number">09082345612</td>
+              <td data-label="Email">africaman23@gmail.com</td>
+              <td data-label="Password">345bgf</td>
+              <td data-label="Options">View</td>
+            </tr>
+
+            <tr>
+              <td data-label="No">3</td>
+              <td data-label="Firstname">Michael</td>
+              <td data-label="Lastname">Simba</td>
+              <td data-label="Phone Number">09082345612</td>
+              <td data-label="Email">africaman23@gmail.com</td>
+              <td data-label="Password">345bgf</td>
+              <td data-label="Options">View</td>
+            </tr>
+
+            <tr>
+              <td data-label="No">4</td>
+              <td data-label="Firstname">Michael</td>
+              <td data-label="Lastname">Simba</td>
+              <td data-label="Phone Number">09082345612</td>
+              <td data-label="Email">africaman23@gmail.com</td>
+              <td data-label="Password">345bgf</td>
+              <td data-label="Options">View</td>
+            </tr>
+
+            <tr>
+              <td data-label="No">5</td>
+              <td data-label="Firstname">Michael</td>
+              <td data-label="Lastname">Simba</td>
+              <td data-label="Phone Number">09082345612</td>
+              <td data-label="Email">africaman23@gmail.com</td>
+              <td data-label="Password">345bgf</td>
+              <td data-label="Options">View</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
