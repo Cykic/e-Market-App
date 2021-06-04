@@ -8,6 +8,7 @@ import currentCategoryView from '../views/currentCategoryView.js'
 import singleProductView from '../views/singleProductView.js'
 import {users} from '../views/loginView.js'
 import abstractView from '../views/abstractView.js'
+import { getAddToCartButtons } from './app.js'
 const abstract= new abstractView()
 function push(event, view){
   let id= event.target.id; 
@@ -80,41 +81,27 @@ async function controlCategoriesView(){
         
     }
 }  
-async function controlCategories(){
+// async function controlCategories(){
    
-     try{
-await model.getCategories()
-categoryView.showViews(model.state.categories)
- }
- catch(err){
-     console.log(err);
-     categoryView.renderProductsError(err)
- }
+//      try{
+// await model.getCategories()
+// categoryView.showViews(model.state.categories)
+//  }
+//  catch(err){
+//      console.log(err);
+//      categoryView.renderProductsError(err)
+//  }
 
 
-}
+// }
 registerHandler();
 
-async function controlCategoriesView() {
-  try {
-    await model.getProducts();
-    await model.getCategories();
-    category1View.showViews(model.state.category1);
-    category1View.seeMoreHandler(model.state.category1All);
-    category2View.seeMoreHandler2(model.state.category2All);
-    category2View.showViews(model.state.category2);
-    
 
-  } catch (err) {
-    console.log(err);
-  }
-}
 async function controlCategories() {
   try {
     await model.getCategories();
     categoryView.showViews(model.state.categories);
-    getAddToCartButtons()
-  } catch (err) {
+    } catch (err) {
     console.log(err);
     categoryView.renderProductsError(err);
   }
@@ -146,4 +133,5 @@ window.addEventListener("hashchange", controlSingleProducts);
  window.addEventListener('hashchange', controlSingleProducts)
 console.log(users);
  registerHandler()
+ getAddToCartButtons()
 

@@ -32,7 +32,7 @@ export class Cart {
       this.products = data.products;
       this.products.forEach((prd) => (prd["quantity"] = 1));
       // console.log(data);
-      console.log(this.products);
+      // console.log(this.products);
     } catch (error) {
       console.log("An Error is", error);
     }
@@ -142,6 +142,7 @@ export class Cart {
 
   _clearCart() {
     this.cart.splice(0, this.cart.length);
+    this.updateLocalStorage()
     this._updateCart();
   }
 
@@ -164,7 +165,7 @@ export class Cart {
     
     const JSONCart = JSON.parse(localStorage.getItem("cart"));
     if(JSONCart) this.cart = JSONCart
-    console.log(this.cart);
+    // console.log(this.cart);
   }
 
   updateLocalStorage(){
