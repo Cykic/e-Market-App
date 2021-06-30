@@ -32,15 +32,13 @@
         align-items: center;
 
         @media screen and (min-width: 43.8em) {
-             padding: 0 5rem;    
-             width: 60%;
-             margin: 0 auto; 
+             padding: 0 1rem; 
 
         }
 
         @media screen and (min-width: 72em) {
             padding: 0 5rem;    
-            width: 80%; 
+            width: 100%; 
        }
 
         
@@ -72,14 +70,14 @@
         }
 
         &__search-bar{
-            height: 60%;
+            height: 80%;
             width: 30%;
             display: flex;
             align-items: center;
             position: relative;
 
             @media screen and (min-width: 43.8em) {
-                    width: 60%;
+                    width: 50%;
             }
             
 
@@ -91,10 +89,17 @@
 
 
             &__search{
-                width: 80%;
+                width: 75%;
                 font-family: inherit;
-                padding: .7rem;
+                
+                padding: 1rem;
                 border-radius: 6rem 0 0 6rem;
+
+                @media screen and (min-width: 43.8em) {
+                    width: 90%;
+                    font-size: 2rem;
+                    padding-left: 3rem;
+              }
 
 
                 &:focus{
@@ -123,7 +128,26 @@
 .menu{
    @media screen and (min-width: 43.8em) {
     position: absolute;
-    left: 5%;
-    top: 0%;
+    left: 1%;
+    top: 1%;
    }
 }
+
+.menu-name{
+    display: none;
+
+
+    @media screen and (min-width: 43.8em) {
+        display: block;
+        font-size: 2rem;
+        color: var(--color-tetiary);
+        cursor: pointer;
+    }
+ }
+
+ .big{
+     display: none;
+     @media screen and (min-width: 72em) {
+        display: inline-block;
+    }
+ }
